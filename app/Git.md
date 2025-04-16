@@ -1,1 +1,0 @@
-Application de référencement de recette de cuisine et d'ingrédient.

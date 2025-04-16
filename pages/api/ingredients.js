@@ -26,7 +26,7 @@ export default function handler(req, res) {
     res.status(200).json(tasks);
   } else if (req.method === 'POST') {
     const tasks = readTasks();
-    const newTask = req.body;
+    const newTask = { ...req.body, quantity: req.body.quantity || '0', price: req.body.price || '0' }; // Default values
     tasks.push(newTask);
     writeTasks(tasks);
     res.status(201).json(newTask);

@@ -62,7 +62,7 @@ const TodoList = () => {
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
       <nav>
-        <Link href="/">Ingredients</Link> | <Link href="/cooking-recipe">Cooking Recipe</Link>
+        <Link href="/">Ingredients</Link> | <Link href="/cooking-recipe">Cooking Recipe</Link> | <Link href="/ingredients-low">Low Quantity Ingredients</Link>
       </nav>
       <h1>Ingredients</h1>
       <div>
@@ -90,7 +90,7 @@ const TodoList = () => {
             }}
           >
             <span onClick={() => toggleTaskCompletion(t.id)} style={{ cursor: 'pointer' }}>
-              {t.text}
+              {t.text} (Quantity: {t.quantity || 0})
             </span>
             <div>
               <button onClick={() => router.push(`/edit-ingredient/${t.id}`)} style={{ marginLeft: '10px' }}>

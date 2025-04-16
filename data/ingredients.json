@@ -9,11 +9,57 @@
   {
     "id": 1744545882440,
     "text": "farine de blé",
-    "completed": false
+    "completed": false,
+    "quantity": "1",
+    "price": "1"
   },
   {
     "id": 1744545886697,
     "text": "pomme",
-    "completed": false
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744823944064,
+    "text": "oeuf",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744823964920,
+    "text": "sel",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744824141653,
+    "text": "parmesan",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744824151107,
+    "text": "lait",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744824161557,
+    "text": "levure chimique",
+    "completed": false,
+    "quantity": "0",
+    "price": "0"
+  },
+  {
+    "id": 1744825560344,
+    "text": "chorizo",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
   }
 ]

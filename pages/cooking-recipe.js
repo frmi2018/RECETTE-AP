@@ -83,23 +83,27 @@ const CookingRecipe = () => {
             key={t.id}
             style={{
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '10px',
-              textDecoration: t.completed ? 'line-through' : 'none',
+              flexDirection: 'column',
+              marginBottom: '20px',
+              border: '1px solid #ccc',
+              padding: '10px',
+              borderRadius: '5px',
             }}
           >
-            <span onClick={() => toggleTaskCompletion(t.id)} style={{ cursor: 'pointer' }}>
-              {t.text}
+            <span>
+              {t.text} ({t.type || 'main'})
             </span>
-            <div>
-              <button onClick={() => router.push(`/edit-recipe/${t.id}`)} style={{ marginLeft: '10px' }}>
-                Edit
-              </button>
-              <button onClick={() => deleteTask(t.id)} style={{ marginLeft: '10px' }}>
-                Delete
-              </button>
-            </div>
+            <span
+              style={{
+                color: t.ingredients && t.ingredients.filter((i) => parseInt(i.quantity, 10) > 1).length > 0 ? 'green' : 'red',
+              }}
+            >
+              Number of Ingredients: {t.ingredients ? t.ingredients.length : 0}
+            </span>
+            <span>Number of Steps: {t.steps ? t.steps.length : 0}</span>
+            <button onClick={() => router.push(`/edit-recipe/${t.id}`)} style={{ marginTop: '10px' }}>
+              Edit Recipe
+            </button>
           </li>
         ))}
       </ul>

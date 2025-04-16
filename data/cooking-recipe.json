@@ -7,6 +7,65 @@
       "oeuf",
       "farine de blé",
       "pomme"
+    ],
+    "type": "dessert",
+    "steps": [
+      {
+        "number": 1,
+        "text": "Preheat the oven to 180°C."
+      },
+      {
+        "number": 2,
+        "text": "Mix the flour and eggs."
+      },
+      {
+        "number": 3,
+        "text": "Add sliced apples and bake for 30 minutes."
+      }
     ]
+  },
+  {
+    "id": 1744824072498,
+    "text": "Muffins au parmesan et chorizo",
+    "completed": false,
+    "steps": [
+      {
+        "number": 1,
+        "text": "Préchauffez le four à 180°C"
+      },
+      {
+        "number": 2,
+        "text": "Mélangez la farine et la levure."
+      },
+      {
+        "number": 3,
+        "text": "Ajoutez les oeufs puis le lait."
+      },
+      {
+        "number": 4,
+        "text": "Mélangez puis ajoutez le parmesan râpé et le chorizo coupé en petits dés."
+      },
+      {
+        "number": 5,
+        "text": "Garnissez 8 petits moules à muffins."
+      },
+      {
+        "number": 6,
+        "text": "Enfounez 25 min."
+      },
+      {
+        "number": 7,
+        "text": "Degustez chaud ou froid avec une salade."
+      }
+    ],
+    "ingredients": [
+      "farine de blé",
+      "oeuf",
+      "levure chimique",
+      "parmesan",
+      "chorizo",
+      "lait"
+    ],
+    "type": "starter"
   }
 ]

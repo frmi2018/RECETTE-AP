@@ -5,6 +5,8 @@ const EditRecipe = () => {
   const [recipe, setRecipe] = useState(null);
   const [ingredients, setIngredients] = useState([]);
   const [availableIngredients, setAvailableIngredients] = useState([]);
+  const [type, setType] = useState('main'); // Default to 'main'
+  const [steps, setSteps] = useState([]); // Manage preparation steps
   const router = useRouter();
   const { id } = router.query;
 
@@ -16,6 +18,8 @@ const EditRecipe = () => {
       if (recipe) {
         setRecipe(recipe);
         setIngredients(recipe.ingredients || []);
+        setType(recipe.type || 'main'); // Set type if available
+        setSteps(recipe.steps || []); // Load steps if available
       }
     };
 
@@ -31,8 +35,27 @@ const EditRecipe = () => {
     }
   }, [id]);
 
+  const addStep = () => {
+    const newStep = { number: steps.length + 1, text: '' };
+    setSteps([...steps, newStep]);
+  };
+
+  const editStep = (number, newText) => {
+    const updatedSteps = steps.map((step) =>
+      step.number === number ? { ...step, text: newText } : step
+    );
+    setSteps(updatedSteps);
+  };
+
+  const deleteStep = (number) => {
+    const updatedSteps = steps
+      .filter((step) => step.number !== number)
+      .map((step, index) => ({ ...step, number: index + 1 })); // Renumber steps
+    setSteps(updatedSteps);
+  };
+
   const saveRecipe = async () => {
-    const updatedRecipe = { ...recipe, ingredients };
+    const updatedRecipe = { ...recipe, ingredients, type, steps };
     const res = await fetch('/api/cooking-recipe', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -63,6 +86,16 @@ const EditRecipe = () => {
       </div>
       <div>
         <label>
+          Type:
+          <select value={type} onChange={(e) => setType(e.target.value)} style={{ marginLeft: '10px' }}>
+            <option value="starter">Starter</option>
+            <option value="main">Main Course</option>
+            <option value="dessert">Dessert</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>
           Ingredients:
           <ul style={{ listStyle: 'none', padding: 0, marginTop: '10px' }}>
             {availableIngredients.map((ingredient) => (
@@ -79,6 +112,25 @@ const EditRecipe = () => {
             ))}
           </ul>
         </label>
+      </div>
+      <div>
+        <h2>Preparation Steps</h2>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          {steps.map((step) => (
+            <li key={step.number} style={{ marginBottom: '10px' }}>
+              <span>Step {step.number}: </span>
+              <input
+                type="text"
+                value={step.text}
+                onChange={(e) => editStep(step.number, e.target.value)}
+                placeholder="Enter step description"
+                style={{ marginRight: '10px' }}
+              />
+              <button onClick={() => deleteStep(step.number)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+        <button onClick={addStep} style={{ marginTop: '10px' }}>Add Step</button>
       </div>
       <button onClick={saveRecipe} style={{ marginTop: '20px' }}>
         Save

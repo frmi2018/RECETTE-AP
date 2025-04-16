@@ -20,19 +20,33 @@ const writeTasks = (tasks) => {
   fs.writeFileSync(filePath, JSON.stringify(tasks, null, 2), 'utf-8');
 };
 
+const addTypeToRecipe = (recipe) => {
+  if (!recipe.type) {
+    recipe.type = 'main'; // Default to 'main' if type is not provided
+  }
+  return recipe;
+};
+
+const addStepsToRecipe = (recipe) => {
+  if (!recipe.steps) {
+    recipe.steps = []; // Initialize steps if not provided
+  }
+  return recipe;
+};
+
 export default function handler(req, res) {
   if (req.method === 'GET') {
     const tasks = readTasks();
     res.status(200).json(tasks);
   } else if (req.method === 'POST') {
     const tasks = readTasks();
-    const newTask = req.body;
+    const newTask = addStepsToRecipe(req.body);
     tasks.push(newTask);
     writeTasks(tasks);
     res.status(201).json(newTask);
   } else if (req.method === 'PUT') {
     const tasks = readTasks();
-    const updatedRecipe = req.body;
+    const updatedRecipe = addStepsToRecipe(req.body);
     const updatedTasks = tasks.map((task) =>
       task.id === updatedRecipe.id ? updatedRecipe : task
     );

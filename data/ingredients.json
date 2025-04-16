@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1744545043265,
+    "text": "fromage",
+    "completed": false,
+    "quantity": "1",
+    "price": "2"
+  },
+  {
+    "id": 1744545882440,
+    "text": "farine de blé",
+    "completed": false
+  },
+  {
+    "id": 1744545886697,
+    "text": "pomme",
+    "completed": false
+  }
+]

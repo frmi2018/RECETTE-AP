@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const EditRecipe = () => {
   const [recipe, setRecipe] = useState(null);
@@ -7,6 +8,7 @@ const EditRecipe = () => {
   const [availableIngredients, setAvailableIngredients] = useState([]);
   const [type, setType] = useState('main'); // Default to 'main'
   const [steps, setSteps] = useState([]); // Manage preparation steps
+  const [showAvailableIngredients, setShowAvailableIngredients] = useState(false); // Manage visibility of available ingredients
   const router = useRouter();
   const { id } = router.query;
 
@@ -78,6 +80,9 @@ const EditRecipe = () => {
 
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+      <nav>
+        <Link href="/">Home</Link> | <Link href="/ingredients">Ingredients</Link> | <Link href="/cooking-recipe">Cooking Recipe</Link> | <Link href="/ingredients-low">Low Quantity Ingredients</Link>
+      </nav>
       <h1>Edit Recipe</h1>
       <div>
         <label>
@@ -95,23 +100,40 @@ const EditRecipe = () => {
         </label>
       </div>
       <div>
-        <label>
-          Ingredients:
-          <ul style={{ listStyle: 'none', padding: 0, marginTop: '10px' }}>
-            {availableIngredients.map((ingredient) => (
-              <li key={ingredient.id} style={{ marginBottom: '5px' }}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={ingredients.includes(ingredient.text)}
-                    onChange={() => toggleIngredient(ingredient.text)}
-                  />
-                  {ingredient.text}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </label>
+        <h2>Selected Ingredients</h2>
+        <ul style={{ listStyle: 'none', padding: 0, marginTop: '10px' }}>
+          {ingredients.map((ingredient, index) => (
+            <li key={index} style={{ marginBottom: '5px', display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: '10px' }}>{ingredient}</span>
+              <button onClick={() => toggleIngredient(ingredient)} style={{ backgroundColor: 'red', color: 'white', border: 'none', padding: '5px 10px', cursor: 'pointer' }}>
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+        <button onClick={() => setShowAvailableIngredients(!showAvailableIngredients)} style={{ marginTop: '10px' }}>
+          {showAvailableIngredients ? 'Hide Available Ingredients' : 'Add Ingredient'}
+        </button>
+        {showAvailableIngredients && (
+          <div style={{ marginTop: '10px' }}>
+            <h3>Available Ingredients</h3>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              {availableIngredients
+                .filter((ingredient) => !ingredients.includes(ingredient.text))
+                .map((ingredient) => (
+                  <li key={ingredient.id} style={{ marginBottom: '5px' }}>
+                    <label>
+                      <input
+                        type="checkbox"
+                        onChange={() => toggleIngredient(ingredient.text)}
+                      />
+                      {ingredient.text}
+                    </label>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div>
         <h2>Preparation Steps</h2>

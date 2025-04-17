@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const EditIngredient = () => {
   const [ingredient, setIngredient] = useState(null);
@@ -38,6 +39,9 @@ const EditIngredient = () => {
 
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+      <nav>
+        <Link href="/">Home</Link> | <Link href="/ingredients">Ingredients</Link> | <Link href="/cooking-recipe">Cooking Recipe</Link> | <Link href="/ingredients-low">Low Quantity Ingredients</Link>
+      </nav>
       <h1>Edit Ingredient</h1>
       <div>
         <label>

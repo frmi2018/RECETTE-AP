@@ -24,6 +24,9 @@ const IngredientsLow = () => {
 
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+      <nav>
+        <Link href="/">Home</Link> | <Link href="/ingredients">Ingredients</Link> | <Link href="/cooking-recipe">Cooking Recipe</Link>
+      </nav>
       <h1>Ingredients with Low Quantity</h1>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {ingredients.map((ingredient) => (
@@ -32,9 +35,6 @@ const IngredientsLow = () => {
           </li>
         ))}
       </ul>
-      <Link href="/">
-        <button style={{ marginTop: '20px', padding: '10px 20px' }}>Return to Main Page</button>
-      </Link>
     </div>
   );
 };

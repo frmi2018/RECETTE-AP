@@ -1,12 +1,5 @@
 [
   {
-    "id": 1744545043265,
-    "text": "fromage",
-    "completed": false,
-    "quantity": "1",
-    "price": "2"
-  },
-  {
     "id": 1744545882440,
     "text": "farine de blé",
     "completed": false,
@@ -23,13 +16,6 @@
   {
     "id": 1744823944064,
     "text": "oeuf",
-    "completed": false,
-    "quantity": "1",
-    "price": "0"
-  },
-  {
-    "id": 1744823964920,
-    "text": "sel",
     "completed": false,
     "quantity": "1",
     "price": "0"
@@ -52,12 +38,61 @@
     "id": 1744824161557,
     "text": "levure chimique",
     "completed": false,
-    "quantity": "0",
+    "quantity": "2",
     "price": "0"
   },
   {
     "id": 1744825560344,
     "text": "chorizo",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744828551208,
+    "text": "chocolat",
+    "completed": false,
+    "quantity": "0",
+    "price": "0"
+  },
+  {
+    "id": 1744828594699,
+    "text": "sel",
+    "completed": false,
+    "quantity": "0",
+    "price": "0"
+  },
+  {
+    "id": 1744828603693,
+    "text": "poivre",
+    "completed": false,
+    "quantity": "0",
+    "price": "0"
+  },
+  {
+    "id": 1744928227895,
+    "text": "pâte feuilletée",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744928239109,
+    "text": "romarin",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744928264924,
+    "text": "saucisse de francfort",
+    "completed": false,
+    "quantity": "1",
+    "price": "0"
+  },
+  {
+    "id": 1744930945974,
+    "text": "papier cuisson",
     "completed": false,
     "quantity": "1",
     "price": "0"

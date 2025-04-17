@@ -10,9 +10,9 @@ const readTasks = () => {
   const data = fs.readFileSync(filePath, 'utf-8');
   try {
     const tasks = JSON.parse(data);
-    return Array.isArray(tasks) ? tasks : []; // Ensure tasks is an array
+    return Array.isArray(tasks) ? tasks : [];
   } catch {
-    return []; // Fallback to an empty array if JSON is invalid
+    return [];
   }
 };
 
@@ -26,7 +26,7 @@ export default function handler(req, res) {
     res.status(200).json(tasks);
   } else if (req.method === 'POST') {
     const tasks = readTasks();
-    const newTask = { ...req.body, quantity: req.body.quantity || '0', price: req.body.price || '0' }; // Default values
+    const newTask = { ...req.body, quantity: req.body.quantity || '0', price: req.body.price || '0' };
     tasks.push(newTask);
     writeTasks(tasks);
     res.status(201).json(newTask);
@@ -43,7 +43,7 @@ export default function handler(req, res) {
     const { id } = req.query;
     const updatedTasks = tasks.filter((task) => task.id !== parseInt(id, 10));
     writeTasks(updatedTasks);
-    res.status(200).json({ message: 'Task deleted' });
+    res.status(200).json({ message: 'Ingredient deleted' });
   } else {
     res.status(405).json({ message: 'Method not allowed' });
   }

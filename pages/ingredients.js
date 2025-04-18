@@ -66,19 +66,6 @@ const IngredientsPage = () => {
     }
   };
 
-  const toggleTaskCompletion = async (id) => {
-    const updatedTasks = tasks.map((t) =>
-      t.id === id ? { ...t, completed: !t.completed } : t
-    );
-    setTasks(updatedTasks);
-
-    await fetch('/api/ingredients', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedTasks),
-    });
-  };
-
   const isIngredientUsed = (ingredientText) => {
     return recipes.some((recipe) => recipe.ingredients && recipe.ingredients.includes(ingredientText));
   };
@@ -151,23 +138,30 @@ const IngredientsPage = () => {
               justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: '10px',
-              textDecoration: t.completed ? 'line-through' : 'none',
+              border: '1px solid #ccc',
+              padding: '10px',
+              borderRadius: '5px',
             }}
           >
-            <span onClick={() => toggleTaskCompletion(t.id)} style={{ cursor: 'pointer' }}>
-              {t.text} (Quantity: {t.quantity || 0})
+            <span>
+              {t.text} - {t.quantity || 0}
             </span>
             <div>
-              <button onClick={() => router.push(`/edit-ingredient/${t.id}`)} style={{ marginLeft: '10px' }}>
+              <button onClick={() => router.push(`/edit-ingredient/${t.id}`)} style={{ marginRight: '10px' }}>
                 Edit
               </button>
               <button
-                onClick={() => deleteTask(t.id)}
-                style={{ marginLeft: '10px' }}
-                disabled={isIngredientUsed(t.text)}
-              >
-                Delete
-              </button>
+                  onClick={() => {
+                    const confirmDelete = window.confirm('Are you sure you want to delete this ingredient?');
+                    if (confirmDelete) {
+                      deleteTask(t.id);
+                    }
+                  }}
+                  style={{ backgroundColor: 'red', color: 'white' }}
+                  disabled={isIngredientUsed(t.text)}
+                >
+                  Delete
+                </button>
             </div>
           </li>
         ))}

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 const CookingRecipe = () => {
   const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState('');
   const [availableIngredients, setAvailableIngredients] = useState([]);
   const [filterType, setFilterType] = useState('all'); // Filter by type
   const [filterLetter, setFilterLetter] = useState(''); // Filter by first letter
@@ -64,8 +65,26 @@ const CookingRecipe = () => {
     return { available, unavailable };
   };
 
-  // Filter and sort recipes
-  const filteredTasks = tasks
+
+
+
+  const addTask = async () => {
+    if (task.trim()) {
+      const newTask = { id: Date.now(), text: task, completed: false };
+      const res = await fetch('/api/cooking-recipe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newTask),
+      });
+      if (res.ok) {
+        setTasks([...tasks, newTask]);
+        setTask('');
+      }
+    }
+  };
+
+    // Filter and sort recipes
+    const filteredTasks = tasks
     .filter((t) => (filterType === 'all' || t.type === filterType)) // Filter by type
     .filter((t) => (filterLetter === '' || t.text.toLowerCase().startsWith(filterLetter.toLowerCase()))) // Filter by letter
     .sort((a, b) => a.text.localeCompare(b.text)); // Sort alphabetically
@@ -95,6 +114,18 @@ const CookingRecipe = () => {
         <Link href="/">Home</Link> | <Link href="/ingredients">Ingredients</Link> | <Link href="/ingredients-low">Low Quantity Ingredients</Link>
       </nav>
       <h1>Cooking Recipe</h1>
+      <div>
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          placeholder="Add a new recipe"
+          style={{ padding: '10px', width: '80%' }}
+        />
+        <button onClick={addTask} style={{ padding: '10px', marginLeft: '10px' }}>
+          Add
+        </button>
+      </div>
 
       {/* Filters */}
       <div style={{ marginBottom: '20px' }}>
@@ -107,6 +138,8 @@ const CookingRecipe = () => {
             <option value="dessert">Dessert</option>
           </select>
         </label>
+
+            {/* Filter by Letter */}
         <label style={{ marginLeft: '20px' }}>
           Filter by Letter:
           <input

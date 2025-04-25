@@ -4,6 +4,8 @@ Application Next.js pour gérer des recettes de cuisine et les ingrédients asso
 
 ---
 
+![image](public\images\capture.png)
+
 ## 📁 Structure du projet
 
 components/ # composants  
@@ -18,6 +20,7 @@ styles/ globals.css # Styles globaux
 
 ## ✅ Fonctionnalités actuelles
 
+- ✅ Affichage de 3 idées de recettes en page d'accueil
 - ✅ Affichage des ingrédients
 - ✅ Affichage des recettes
 - ✅ Affichage des ingrédients en rupture de stock

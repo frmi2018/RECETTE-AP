@@ -6,22 +6,23 @@ export default function Navigation() {
 
   const links = [
     { href: "/", label: "Accueil", icon: "home.png" },
-    { href: "/add-recipe", label: "Ajouter une recette", icon: "recipes.png" },
-    {
-      href: "/add-ingredient",
-      label: "Ajouter un ingrédient",
-      icon: "ingredients.png",
-    },
     {
       href: "/recipes",
       label: "Recettes",
       icon: "recipes.png",
     },
+    { href: "/add-recipe", label: "Ajouter une recette", icon: "recipes.png" },
     {
       href: "/ingredients",
       label: "Ingrédients",
       icon: "ingredients.png",
     },
+    {
+      href: "/add-ingredient",
+      label: "Ajouter un ingrédient",
+      icon: "ingredients.png",
+    },
+
     {
       href: "/low-stock-ingredients",
       label: "Ingrédients en rupture de stock",

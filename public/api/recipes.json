@@ -9,7 +9,8 @@
         "portions": 4,
         "type": "plat principal",
         "calories": 1625,
-        "régime": ["sans gluten"]
+        "régime": ["sans gluten"],
+        "image": "/images/add-image.png"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "portions": 4,
         "type": "plat principal",
         "calories": 1850,
-        "régime": ["sans gluten", "sans lactose"]
+        "régime": ["sans gluten", "sans lactose"],
+        "image": "/images/add-image.png"
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@
         "portions": 2,
         "type": "accompagnement",
         "calories": 350,
-        "régime": ["végétarien", "végan", "sans gluten"]
+        "régime": ["végétarien", "végan", "sans gluten"],
+        "image": "/images/add-image.png"
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@
         "portions": 6,
         "type": "plat principal",
         "calories": 450,
-        "régime": ["non végétarien"]
+        "régime": ["non végétarien"],
+        "image": "/images/add-image.png"
     },
     {
         "id": 5,
@@ -57,7 +61,8 @@
         "portions": 4,
         "type": "entrée",
         "calories": 200,
-        "régime": ["végétarien", "végan"]
+        "régime": ["végétarien", "végan"],
+        "image": "/images/add-image.png"
     },
     {
         "id": 6,
@@ -69,7 +74,8 @@
         "portions": 4,
         "type": "plat principal",
         "calories": 800,
-        "régime": ["végétarien"]
+        "régime": ["végétarien"],
+        "image": "/images/recipes/pizza-margherita.jpg"
     },
     {
         "id": 7,
@@ -81,7 +87,8 @@
         "portions": 4,
         "type": "accompagnement",
         "calories": 250,
-        "régime": ["végétarien", "végan", "sans gluten"]
+        "régime": ["végétarien", "végan", "sans gluten"],
+        "image": "/images/recipes/ratatouille.jpg"
     },
     {
         "id": 8,
@@ -93,7 +100,8 @@
         "portions": 6,
         "type": "plat principal",
         "calories": 1200,
-        "régime": ["non végétarien", "sans gluten"]
+        "régime": ["non végétarien", "sans gluten"],
+        "image": "/images/add-image.png"
     },
     {
         "id": 9,
@@ -105,7 +113,8 @@
         "portions": 4,
         "type": "entrée",
         "calories": 600,
-        "régime": ["non végétarien"]
+        "régime": ["non végétarien"],
+        "image": "/images/recipes/salade-cesar.jpg"
     },
     {
         "id": 10,
@@ -117,6 +126,7 @@
         "portions": 8,
         "type": "dessert",
         "calories": 400,
-        "régime": ["végétarien"]
+        "régime": ["végétarien"],
+        "image": "/images/add-image.png"
     }
 ]

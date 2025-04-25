@@ -8,8 +8,20 @@ export default function Layout({ children }) {
         <Navigation />
       </header>
       <main>{children}</main>
-      <footer>
-        <p>© 2025 Recette App</p>
+      <footer
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <span>Make in 2025 with</span>
+        <img
+          src="/images/icons/coeur.png"
+          alt="heart-icon"
+          style={{ height: "20px", width: "20px", margin: "0 5px" }}
+        />
+        <span>by MICHAUD Franck</span>
       </footer>
     </div>
   );

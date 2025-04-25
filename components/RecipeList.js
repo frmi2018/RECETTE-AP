@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchRecipes } from "../modules/recipeUtils";
+import RecipeCard from "./RecipeCard"; // Assurez-vous que le chemin est correct
 
 export default function RecipeList() {
   const [recipes, setRecipes] = useState([]);
@@ -20,22 +21,37 @@ export default function RecipeList() {
   );
 
   return (
-    <div>
-      {filteredRecipes.map(recipe => (
-        <div key={recipe.id}>
-          <h3>{recipe.nom}</h3>
-          <p>{recipe.instructions}</p>
-        </div>
-      ))}
-      <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-        Précédent
-      </button>
-      <button
-        onClick={() => setPage(page + 1)}
-        disabled={page * recipesPerPage >= recipes.length}
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "20px",
+        }}
       >
-        Suivant
-      </button>
-    </div>
+        {filteredRecipes.map(recipe => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          padding: "20px",
+        }}
+      >
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          Précédent
+        </button>
+        <button
+          onClick={() => setPage(page + 1)}
+          disabled={page * recipesPerPage >= recipes.length}
+        >
+          Suivant
+        </button>
+      </div>
+    </>
   );
 }

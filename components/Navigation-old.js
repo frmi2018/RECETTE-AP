@@ -11,11 +11,7 @@ export default function Navigation() {
       label: "Recettes",
       icon: "recipes.png",
     },
-    {
-      href: "/add-recipe",
-      label: "Ajouter : une recette",
-      icon: "recipes.png",
-    },
+    { href: "/add-recipe", label: "Ajouter une recette", icon: "recipes.png" },
     {
       href: "/ingredients",
       label: "Ingrédients",
@@ -23,13 +19,13 @@ export default function Navigation() {
     },
     {
       href: "/add-ingredient",
-      label: "Ajouter : un ingrédient",
+      label: "Ajouter un ingrédient",
       icon: "ingredients.png",
     },
 
     {
       href: "/low-stock-ingredients",
-      label: "Ingrédients : en rupture de stock",
+      label: "Ingrédients en rupture de stock",
       icon: "low-stock.png",
     },
     {
@@ -70,51 +66,28 @@ export default function Navigation() {
                   marginBottom: "5px",
                 }}
               >
-                <div
+                {(link.href === "/add-ingredient" ||
+                  link.href === "/add-recipe") && (
+                  <img
+                    src="/images/icons/add.png"
+                    alt={link.label}
+                    style={{
+                      width: "25px",
+                      height: "25px",
+                      marginRight: "5px",
+                    }}
+                  />
+                )}
+                <img
+                  src={`/images/icons/${link.icon}`}
+                  alt={link.label}
                   style={{
-                    position: "relative",
                     width: "50px",
                     height: "50px",
                   }}
-                >
-                  <img
-                    src={`/images/icons/${link.icon}`}
-                    alt={link.label}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  />
-                  {(link.href === "/add-ingredient" ||
-                    link.href === "/add-recipe") && (
-                    <img
-                      src="/images/icons/add.png"
-                      alt="add"
-                      style={{
-                        position: "absolute",
-                        top: "-10px",
-                        right: "-10px",
-                        width: "30px",
-                        height: "30px",
-                        backgroundColor: "white",
-                        borderRadius: "50%", // forme ronde si besoin
-                        padding: "2px",
-                      }}
-                    />
-                  )}
-                </div>
+                />
               </div>
-              <span style={{ textAlign: "center" }}>
-                {link.label.includes(":") ? (
-                  <>
-                    {link.label.split(":")[0]}
-                    <br />
-                    {link.label.split(":")[1].trim()}
-                  </>
-                ) : (
-                  link.label
-                )}
-              </span>
+              {link.label}
             </Link>
           </li>
         ))}

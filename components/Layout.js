@@ -15,13 +15,13 @@ export default function Layout({ children }) {
           alignItems: "center",
         }}
       >
-        <span>Make in 2025 with</span>
+        <span>réalisé en 2025 avec</span>
         <img
           src="/images/icons/coeur.png"
           alt="heart-icon"
           style={{ height: "20px", width: "20px", margin: "0 5px" }}
         />
-        <span>by MICHAUD Franck</span>
+        <span>par MICHAUD Franck</span>
       </footer>
     </div>
   );

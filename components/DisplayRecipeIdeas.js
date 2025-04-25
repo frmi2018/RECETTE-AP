@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchRecipes } from "../modules/recipeUtils";
+import Link from "next/link";
+import RecipeCard from "./RecipeCard";
 
 // Afficher 3 recettes aléatoires
 export default function DisplayRecipeIdeas() {
@@ -38,22 +40,14 @@ export default function DisplayRecipeIdeas() {
         }}
       >
         {selectedRecipes.map(recipe => (
-          <div
+          <Link
+            href={`/recipes/${recipe.id}`}
             key={recipe.id}
-            style={{
-              textAlign: "center",
-              border: "2px solid black",
-              borderRadius: "5px",
-              padding: "10px",
-            }}
+            passHref
+            style={{ textDecoration: "none" }}
           >
-            <img
-              src={recipe.image}
-              alt={recipe.nom}
-              style={{ width: "200px", height: "200px" }}
-            />
-            <h3>{recipe.nom}</h3>
-          </div>
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          </Link>
         ))}
       </div>
     );

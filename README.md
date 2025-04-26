@@ -4,7 +4,7 @@ Application Next.js pour gérer des recettes de cuisine et les ingrédients asso
 
 ---
 
-[<img src="https://github.com/frmi2018/RECETTE-AP/blob/main/public/images/capture.png" width="240" height=auto>]
+<img src="https://github.com/frmi2018/RECETTE-AP/blob/main/public/images/capture.png" width="480" height=auto>
 
 ## 📁 Structure du projet
 

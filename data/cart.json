@@ -1,0 +1,50 @@
+[
+  {
+    "id": 15,
+    "nom": "poivron",
+    "quantité": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.25
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 33,
+    "nom": "laitue",
+    "quantité": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.85
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  }
+]

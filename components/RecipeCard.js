@@ -8,7 +8,7 @@ export default function RecipeCard({ recipe }) {
         border: "2px solid black",
         borderRadius: "5px",
         padding: "10px",
-        cursor: "pointer",
+        color: "black",
       }}
     >
       <img

@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react";
 import { fetchIngredients } from "../modules/ingredientUtils";
-import IngredientCard from "./IngredientCard";
+import IngredientLowStockCard from "./IngredientLowStockCard";
 
-export default function IngredientList() {
+export default function LowStockIngredientsList() {
   const [ingredients, setIngredients] = useState([]);
   const [page, setPage] = useState(1);
   const ingredientsPerPage = 5;
-
-  useEffect(() => {
-    const loadIngredients = async () => {
-      const allIngredients = await fetchIngredients();
-      setIngredients(allIngredients);
-    };
-    loadIngredients();
-  }, []);
-
   const filteredIngredients = ingredients.slice(
     (page - 1) * ingredientsPerPage,
     page * ingredientsPerPage,
   );
+
+  useEffect(() => {
+    const loadIngredients = async () => {
+      const allIngredients = await fetchIngredients();
+      // Filtrer les ingrédients avec une quantité de 0 ou inférieure à 1
+      const lowStock = allIngredients.filter(
+        ingredient => ingredient.quantité <= 0,
+      );
+      setIngredients(lowStock);
+    };
+    loadIngredients();
+  }, []);
 
   return (
     <>
@@ -31,7 +34,7 @@ export default function IngredientList() {
         }}
       >
         {filteredIngredients.map(ingredient => (
-          <IngredientCard key={ingredient.id} ingredient={ingredient} />
+          <IngredientLowStockCard key={ingredient.id} ingredient={ingredient} />
         ))}
       </div>
       <div

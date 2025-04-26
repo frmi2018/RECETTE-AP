@@ -1,10 +1,10 @@
-import LowStockIngredients from "../components/LowStockIngredients";
+import LowStockIngredientsList from "../components/LowStockIngredientsList";
 
 export default function LowStockIngredientsPage() {
   return (
     <div>
       <h1>Ingrédients en rupture de stock</h1>
-      <LowStockIngredients />
+      <LowStockIngredientsList />
     </div>
   );
 }

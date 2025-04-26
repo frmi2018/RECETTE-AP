@@ -1,36 +1,41 @@
-// pages/recipes/[id].js
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { fetchRecipe } from "../modules/recipeUtils";
 
 export default function Recipe() {
   const router = useRouter();
   const { id } = router.query;
   const [recipe, setRecipe] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return; // Assure que l'id est présent
+    if (!id) return;
 
-    const fetchRecipe = async () => {
+    const loadRecipe = async () => {
       try {
-        const response = await fetch("/api/recipes.json");
-        const data = await response.json();
-        const selectedRecipe = data.find(r => r.id === parseInt(id));
-        setRecipe(selectedRecipe);
+        const data = await fetchRecipe(id);
+        setRecipe(data);
       } catch (error) {
-        console.error("Erreur lors du chargement de la recette :", error);
+        console.error("Erreur de chargement :", error);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchRecipe();
+    loadRecipe();
   }, [id]);
 
-  if (!recipe) {
+  if (loading) {
     return <p>Chargement...</p>;
   }
 
+  if (!recipe) {
+    return <p>Recette introuvable.</p>;
+  }
+
   return (
-    <div>
-      <h3>{recipe.nom}</h3>
+    <div style={{ padding: "20px" }}>
+      <h2>{recipe.nom}</h2>
       <p>{recipe.instructions}</p>
     </div>
   );

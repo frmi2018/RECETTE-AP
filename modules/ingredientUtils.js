@@ -1,30 +1,38 @@
-import { fs } from "fs";
-
-const API_BASE_URL = "api/ingredients.json";
+const API_BASE_URL = "api/ingredients";
 
 export const fetchIngredients = async () => {
   const response = await fetch(API_BASE_URL);
   if (!response.ok) {
-    throw new Error(
-      `Erreur lors de la récupération des ingrédients : ${response.status}`,
-    );
+    throw new Error("Erreur lors du chargement des ingrédients");
   }
   return await response.json();
 };
 
 export const createIngredient = async ingredient => {
-  // Écrire dans un fichier
-  fs.writeFile(API_BASE_URL, ingredient, "utf8", err => {
-    if (err) {
-      console.error("Erreur lors de l'écriture :", err);
-      return;
-    }
-    console.log("Données sauvegardées avec succès !");
-    // Vous pouvez également retourner une promesse ici si nécessaire
-    return Promise.resolve("Données sauvegardées avec succès !");
+  const response = await fetch(API_BASE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(ingredient),
   });
+
+  if (!response.ok) {
+    throw new Error("Erreur lors de la création de l'ingrédient");
+  }
 };
 
+export const fetchIngredient = async id => {
+  const response = await fetch(`/api/ingredients/${id}`);
+  if (!response.ok) {
+    throw new Error(
+      `Erreur lors de la récupération de l'ingrédient avec id ${id}`,
+    );
+  }
+  return await response.json();
+};
+
+// Fetch the next available ID for a new ingredient
 export const getNextId = async () => {
   const response = await fetch(API_BASE_URL);
   if (!response.ok) {

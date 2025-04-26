@@ -1,6 +1,30 @@
+# PAGE RECETTES
+
+Affiche la liste de toutes les recettes.
+
+## page recipes.js
+
+```js
+import RecipeList from "../components/RecipeList";
+
+export default function RecipesPage() {
+  return (
+    <div>
+      <h1>Liste des recettes</h1>
+      <RecipeList />
+    </div>
+  );
+}
+```
+
+## composant RecipeList.js
+
+Utilse fetchRecipes pour importer les recettes du fichier JSON.  
+Utilse le composant RecipeCard pour l'affichage de chaque recette.
+
+```js
 import { useState, useEffect } from "react";
 import { fetchRecipes } from "../modules/recipeUtils";
-import Link from "next/link";
 import RecipeCard from "./RecipeCard";
 
 export default function RecipeList() {
@@ -32,17 +56,9 @@ export default function RecipeList() {
         }}
       >
         {filteredRecipes.map(recipe => (
-          <Link
-            href={`/recipes/${recipe.id}`}
-            key={recipe.id}
-            passHref
-            style={{ textDecoration: "none" }}
-          >
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          </Link>
+          <RecipeCard key={recipe.id} recipe={recipe} />
         ))}
       </div>
-
       <div
         style={{
           display: "flex",
@@ -64,3 +80,25 @@ export default function RecipeList() {
     </>
   );
 }
+```
+
+## ✅ Fonctionnalités actuelles
+
+- ✅ Affichage des recettes
+- 📁 Importation de données mockées depuis `/public/api/ingredients.json`
+- 🖼️ Support d’images statiques (via `public/images/recipes`)
+- 📄 Pagination 5 recettes par page
+
+## 🛠️ Tests
+
+Fichiers de configuration présents pour Jest :
+
+- 🧪 `jest.config.js` — Configuration principale de Jest
+- ⚙️ `jest.setup.js` — Setup pour les tests (ex. mocks globaux, etc.)
+
+## 🧠 À venir
+
+- ➕➖ Ajout/suppression recettes
+- 🔍 Composant de recherche
+- ↕️ Composant de tri
+- 🗄️ Connexion à une base de données

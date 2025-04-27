@@ -1,0 +1,123 @@
+.editEtapesContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.etapeItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: white;
+  cursor: move;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.etapeItem:hover {
+  background-color: #f9f9f95d;
+}
+
+.dragged {
+  opacity: 0.5;
+}
+
+.dragOverLine {
+  border-top: 2px solid #3498db;
+}
+.dragOverTop {
+  position: relative;
+}
+
+.dragOverTop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #3498db;
+  animation: appear 0.2s ease forwards;
+}
+
+.dragOverBottom {
+  position: relative;
+}
+
+.dragOverBottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #3498db;
+  animation: appear 0.2s ease forwards;
+}
+
+.etapeInput {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.etapeSupprimer {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.etapeSupprimer:hover {
+  background-color: #c0392b;
+}
+
+.etapesActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ajouterBtn,
+.sauvegarderBtn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.ajouterBtn {
+  background-color: #27ae60;
+}
+
+.ajouterBtn:hover {
+  background-color: #1e8449;
+}
+
+.sauvegarderBtn {
+  background-color: #2980b9;
+}
+
+.sauvegarderBtn:hover {
+  background-color: #1c5980;
+}
+
+@keyframes appear {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchRecipes } from "../modules/recipeUtils";
+import { fetchRecipes } from "@/lib/recipeUtils";
 import Link from "next/link";
 import RecipeCard from "./RecipeCard";
 

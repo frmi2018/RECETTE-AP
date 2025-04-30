@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { fetchRecipe } from "../modules/recipeUtils";
-import { fetchIngredients } from "../modules/ingredientUtils";
+import { fetchRecipe } from "../../lib/recipeUtils";
+import { fetchIngredients } from "../../lib/api-ingredients";
 import EditEtapes from "./EditEtapes";
 import styles from "./Recipe.module.css";
 

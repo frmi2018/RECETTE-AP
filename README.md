@@ -1,6 +1,9 @@
-# 🍲 RECETTE-APP
+# 🍲 Projet personnel : RECETTE-APP
 
-Application Next.js pour gérer des recettes de cuisine et les ingrédients associés.
+Application Next.js pour gérer des recettes de cuisine et les ingrédients associés avec bases de données en locale (fichiers JSON).
+
+📅 started april 2025
+in progress...
 
 ---
 
@@ -9,10 +12,15 @@ Application Next.js pour gérer des recettes de cuisine et les ingrédients asso
 ## 📁 Structure du projet
 
 components/ # composants  
+data/ # fichiers json
+docs/ # documentation (à venir)  
 modules/ # fonctions utilitaires  
-pages/  
-public/images/recipes  
+pages/ # pages du site  
+pages/api # server routes  
+pages/recipes # pages recettes dynamiques  
+public/images/icons  
 public/images/ingredients  
+public/images/recipes  
 public/images/icons  
 public/api/ recipes.json # Liste des recettes  
 public/api/ ingredients.json # Liste des ingrédients  

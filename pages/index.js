@@ -1,4 +1,4 @@
-import DisplayRecipeIdeas from "@/components/DisplayRecipeIdeas";
+import DisplayRecipeIdeas from "@/components/recipes/DisplayRecipeIdeas";
 
 export default function HomePage() {
   return (

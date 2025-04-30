@@ -12,21 +12,10 @@ export default function Navigation() {
       icon: "recipes.png",
     },
     {
-      href: "/add-recipe",
-      label: "Ajouter : une recette",
-      icon: "recipes.png",
-    },
-    {
       href: "/ingredients",
       label: "Ingrédients",
       icon: "ingredients.png",
     },
-    {
-      href: "/add-ingredient",
-      label: "Ajouter : un ingrédient",
-      icon: "ingredients.png",
-    },
-
     {
       href: "/low-stock-ingredients",
       label: "Ingrédients : en rupture de stock",
@@ -70,39 +59,14 @@ export default function Navigation() {
                   marginBottom: "5px",
                 }}
               >
-                <div
+                <img
+                  src={`/images/icons/${link.icon}`}
+                  alt={link.label}
                   style={{
-                    position: "relative",
                     width: "50px",
                     height: "50px",
                   }}
-                >
-                  <img
-                    src={`/images/icons/${link.icon}`}
-                    alt={link.label}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                    }}
-                  />
-                  {(link.href === "/add-ingredient" ||
-                    link.href === "/add-recipe") && (
-                    <img
-                      src="/images/icons/add.png"
-                      alt="add"
-                      style={{
-                        position: "absolute",
-                        top: "-10px",
-                        right: "-10px",
-                        width: "30px",
-                        height: "30px",
-                        backgroundColor: "white",
-                        borderRadius: "50%", // forme ronde si besoin
-                        padding: "2px",
-                      }}
-                    />
-                  )}
-                </div>
+                />
               </div>
               <span style={{ textAlign: "center" }}>
                 {link.label.includes(":") ? (

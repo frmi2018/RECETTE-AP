@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchIngredients } from "../modules/ingredientUtils";
+import { fetchIngredients } from "@/lib/api-ingredients";
 import IngredientLowStockCard from "./IngredientLowStockCard";
 
 export default function LowStockIngredientsList() {

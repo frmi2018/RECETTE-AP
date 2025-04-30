@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createRecipe } from "../modules/recipeUtils";
+import { createRecipe } from "../../lib/recipeUtils";
 
 export default function RecipeForm() {
   const [recipe, setRecipe] = useState({

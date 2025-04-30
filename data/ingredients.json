@@ -1,632 +1,1053 @@
 [
-    {
-        "id": 1,
-        "nom": "spaghetti",
-        "quantité": 500,
-        "unité": "g",
-        "catégorie": "pâtes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.0 },
-            { "magasin": "Intermarché", "prix": 1.5 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/ingredients/spaguetti-fiorini.jpg",
-        "marque": "intermarché"
-    },
-    {
-        "id": 2,
-        "nom": "viande hachée",
-        "quantité": 300,
-        "unité": "g",
-        "catégorie": "viandes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 5.0 },
-            { "magasin": "Intermarché", "prix": 5.2 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 3,
-        "nom": "oignon",
-        "quantité": 150,
-        "unité": "g",
-        "catégorie": "légumes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.0 },
-            { "magasin": "Intermarché", "prix": 1.99 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/ingredients/oignon.jpg",
-        "marque": "sans marque"
-    },
-    {
-        "id": 4,
-        "nom": "ail",
-        "quantité": 5,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.3 },
-            { "magasin": "Intermarché", "prix": 0.35 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 5,
-        "nom": "sauce tomate",
-        "quantité": 2,
-        "unité": "bouteille",
-        "catégorie": "sauces",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.0 },
-            { "magasin": "Intermarché", "prix": 2.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 6,
-        "nom": "huile d'olive",
-        "quantité": 1,
-        "unité": "litre",
-        "catégorie": "huiles",
-        "unite_facturation": "litre",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 6.5 },
-            { "magasin": "Intermarché", "prix": 6.7 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 7,
-        "nom": "sel",
-        "quantité": 500,
-        "unité": "g",
-        "catégorie": "épices",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.8 },
-            { "magasin": "Intermarché", "prix": 0.85 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 8,
-        "nom": "poivre",
-        "quantité": 100,
-        "unité": "g",
-        "catégorie": "épices",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.5 },
-            { "magasin": "Intermarché", "prix": 1.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 9,
-        "nom": "blanc de poulet",
-        "quantité": 1,
-        "unité": "kg",
-        "catégorie": "viandes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 8.0 },
-            { "magasin": "Intermarché", "prix": 8.5 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 10,
-        "nom": "gingembre",
-        "quantité": 200,
-        "unité": "g",
-        "catégorie": "épices",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 3.0 },
-            { "magasin": "Intermarché", "prix": 3.2 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 11,
-        "nom": "poudre de curry",
-        "quantité": 100,
-        "unité": "g",
-        "catégorie": "épices",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.5 },
-            { "magasin": "Intermarché", "prix": 2.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 12,
-        "nom": "lait de coco",
-        "quantité": 3,
-        "unité": "boîte",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.8 },
-            { "magasin": "Intermarché", "prix": 1.9 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 13,
-        "nom": "brocoli",
-        "quantité": 2,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.0 },
-            { "magasin": "Intermarché", "prix": 1.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 14,
-        "nom": "carotte",
-        "quantité": 5,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.7 },
-            { "magasin": "Intermarché", "prix": 0.75 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 15,
-        "nom": "poivron",
-        "quantité": 0,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.2 },
-            { "magasin": "Intermarché", "prix": 1.25 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 16,
-        "nom": "sauce soja",
-        "quantité": 1,
-        "unité": "bouteille",
-        "catégorie": "sauces",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.5 },
-            { "magasin": "Intermarché", "prix": 2.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 17,
-        "nom": "huile de sésame",
-        "quantité": 1,
-        "unité": "bouteille",
-        "catégorie": "huiles",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 4.0 },
-            { "magasin": "Intermarché", "prix": 4.2 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 18,
-        "nom": "pâte brisée",
-        "quantité": 1,
-        "unité": "rouleau",
-        "catégorie": "pâtes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.0 },
-            { "magasin": "Intermarché", "prix": 2.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 19,
-        "nom": "œufs",
-        "quantité": 6,
-        "unité": "pièce",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.3 },
-            { "magasin": "Intermarché", "prix": 0.35 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 20,
-        "nom": "crème fraîche",
-        "quantité": 200,
-        "unité": "ml",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.5 },
-            { "magasin": "Intermarché", "prix": 1.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 21,
-        "nom": "lardons",
-        "quantité": 150,
-        "unité": "g",
-        "catégorie": "viandes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 3.0 },
-            { "magasin": "Intermarché", "prix": 3.2 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 22,
-        "nom": "herbes de Provence",
-        "quantité": 50,
-        "unité": "g",
-        "catégorie": "épices",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.0 },
-            { "magasin": "Intermarché", "prix": 1.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 23,
-        "nom": "pommes de terre",
-        "quantité": 1,
-        "unité": "kg",
-        "catégorie": "légumes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.2 },
-            { "magasin": "Intermarché", "prix": 1.3 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 24,
-        "nom": "courgette",
-        "quantité": 3,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.8 },
-            { "magasin": "Intermarché", "prix": 0.85 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 25,
-        "nom": "tomate",
-        "quantité": 4,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.6 },
-            { "magasin": "Intermarché", "prix": 0.65 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 26,
-        "nom": "basilic",
-        "quantité": 1,
-        "unité": "botte",
-        "catégorie": "herbes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.0 },
-            { "magasin": "Intermarché", "prix": 1.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 27,
-        "nom": "pâte à pizza",
-        "quantité": 1,
-        "unité": "rouleau",
-        "catégorie": "pâtes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.5 },
-            { "magasin": "Intermarché", "prix": 2.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 28,
-        "nom": "mozzarella",
-        "quantité": 200,
-        "unité": "g",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.0 },
-            { "magasin": "Intermarché", "prix": 2.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 29,
-        "nom": "basilic frais",
-        "quantité": 1,
-        "unité": "botte",
-        "catégorie": "herbes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.2 },
-            { "magasin": "Intermarché", "prix": 1.3 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 30,
-        "nom": "aubergine",
-        "quantité": 2,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.5 },
-            { "magasin": "Intermarché", "prix": 1.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 31,
-        "nom": "zucchini",
-        "quantité": 2,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.3 },
-            { "magasin": "Intermarché", "prix": 1.4 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 32,
-        "nom": "herbes de Provence",
-        "quantité": 50,
-        "unité": "g",
-        "catégorie": "épices",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.0 },
-            { "magasin": "Intermarché", "prix": 1.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 33,
-        "nom": "laitue",
-        "quantité": 0,
-        "unité": "pièce",
-        "catégorie": "légumes",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.8 },
-            { "magasin": "Intermarché", "prix": 0.85 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 34,
-        "nom": "croûtons",
-        "quantité": 100,
-        "unité": "g",
-        "catégorie": "autres",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.0 },
-            { "magasin": "Intermarché", "prix": 1.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 35,
-        "nom": "parmesan",
-        "quantité": 50,
-        "unité": "g",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.5 },
-            { "magasin": "Intermarché", "prix": 2.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 36,
-        "nom": "sauce César",
-        "quantité": 1,
-        "unité": "bouteille",
-        "catégorie": "sauces",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 3.0 },
-            { "magasin": "Intermarché", "prix": 3.2 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 37,
-        "nom": "poulet grillé",
-        "quantité": 200,
-        "unité": "g",
-        "catégorie": "viandes",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 5.0 },
-            { "magasin": "Intermarché", "prix": 5.2 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 38,
-        "nom": "chocolat noir",
-        "quantité": 200,
-        "unité": "g",
-        "catégorie": "autres",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 2.0 },
-            { "magasin": "Intermarché", "prix": 2.1 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 39,
-        "nom": "beurre",
-        "quantité": 100,
-        "unité": "g",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 1.5 },
-            { "magasin": "Intermarché", "prix": 1.6 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 40,
-        "nom": "sucre",
-        "quantité": 150,
-        "unité": "g",
-        "catégorie": "autres",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.8 },
-            { "magasin": "Intermarché", "prix": 0.85 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 41,
-        "nom": "farine",
-        "quantité": 100,
-        "unité": "g",
-        "catégorie": "autres",
-        "unite_facturation": "kilo",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.5 },
-            { "magasin": "Intermarché", "prix": 0.55 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    },
-    {
-        "id": 42,
-        "nom": "œufs",
-        "quantité": 3,
-        "unité": "pièce",
-        "catégorie": "produits laitiers",
-        "unite_facturation": "unité",
-        "prix_par_magasin": [
-            { "magasin": "Carrefour", "prix": 0.3 },
-            { "magasin": "Intermarché", "prix": 0.35 },
-            { "magasin": "Autre", "prix": 0.0 }
-        ],
-        "image": "/images/add-image.png",
-        "marque": "sans marque"
-    }
+  {
+    "id": 1,
+    "nom": "spaghetti",
+    "quantité": 500,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "pâtes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.5
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/ingredients/spaguetti-fiorini.jpg",
+    "marque": "intermarché"
+  },
+  {
+    "id": 2,
+    "nom": "viande hachée",
+    "quantité": 300,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "viandes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 5.2
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 3,
+    "nom": "oignon",
+    "quantité": 150,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "légumes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.99
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/ingredients/oignon.jpg",
+    "marque": "sans marque"
+  },
+  {
+    "id": 4,
+    "nom": "ail",
+    "quantité": 5,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.3
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 5,
+    "nom": "sauce tomate",
+    "quantité": 2,
+    "quantité_a_acheter": 0,
+    "unité": "bouteille",
+    "catégorie": "sauces",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 6,
+    "nom": "huile d'olive",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "litre",
+    "catégorie": "huiles",
+    "unite_facturation": "litre",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 6.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 6.7
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 7,
+    "nom": "sel",
+    "quantité": 500,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "épices",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.85
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 8,
+    "nom": "poivre",
+    "quantité": 100,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "épices",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 9,
+    "nom": "blanc de poulet",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "kg",
+    "catégorie": "viandes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 8.5
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 10,
+    "nom": "gingembre",
+    "quantité": 200,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "épices",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 3
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 3.2
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 11,
+    "nom": "poudre de curry",
+    "quantité": 100,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "épices",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 12,
+    "nom": "lait de coco",
+    "quantité": 3,
+    "quantité_a_acheter": 0,
+    "unité": "boîte",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.9
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 13,
+    "nom": "brocoli",
+    "quantité": 2,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 14,
+    "nom": "carotte",
+    "quantité": 5,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.7
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.75
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 15,
+    "nom": "poivron",
+    "quantité": 0,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.25
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 16,
+    "nom": "sauce soja",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "bouteille",
+    "catégorie": "sauces",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 17,
+    "nom": "huile de sésame",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "bouteille",
+    "catégorie": "huiles",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 4
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 4.2
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 18,
+    "nom": "pâte brisée",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "rouleau",
+    "catégorie": "pâtes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 19,
+    "nom": "œufs",
+    "quantité": 6,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.3
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.35
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 20,
+    "nom": "crème fraîche",
+    "quantité": 200,
+    "quantité_a_acheter": 0,
+    "unité": "ml",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 21,
+    "nom": "lardons",
+    "quantité": 150,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "viandes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 3
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 3.2
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 22,
+    "nom": "herbes de Provence",
+    "quantité": 50,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "épices",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 23,
+    "nom": "pommes de terre",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "kg",
+    "catégorie": "légumes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.3
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 24,
+    "nom": "courgette",
+    "quantité": 3,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.85
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 25,
+    "nom": "tomate",
+    "quantité": 4,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.6
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.65
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 26,
+    "nom": "basilic",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "botte",
+    "catégorie": "herbes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Intermarché",
+        "prix": 1.1
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "intermarché"
+  },
+  {
+    "id": 27,
+    "nom": "pâte à pizza",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "rouleau",
+    "catégorie": "pâtes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 28,
+    "nom": "mozzarella",
+    "quantité": 200,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 29,
+    "nom": "basilic frais",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "botte",
+    "catégorie": "herbes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.3
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 30,
+    "nom": "aubergine",
+    "quantité": 8,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "poids",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "BONDUELLE"
+  },
+  {
+    "id": 31,
+    "nom": "zucchini",
+    "quantité": 2,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.3
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.4
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 32,
+    "nom": "herbes de Provence",
+    "quantité": 50,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "épices",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 33,
+    "nom": "laitue",
+    "quantité": 0,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "légumes",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.85
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 34,
+    "nom": "croûtons",
+    "quantité": 100,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "autres",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 35,
+    "nom": "parmesan",
+    "quantité": 50,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 36,
+    "nom": "sauce César",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "bouteille",
+    "catégorie": "sauces",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 3
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 3.2
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 37,
+    "nom": "poulet grillé",
+    "quantité": 200,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "viandes",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 5.2
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 38,
+    "nom": "chocolat noir",
+    "quantité": 200,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "autres",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 2
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 2.1
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 39,
+    "nom": "beurre",
+    "quantité": 100,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 1.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 1.6
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 40,
+    "nom": "sucre",
+    "quantité": 150,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "autres",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.8
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.85
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 41,
+    "nom": "farine",
+    "quantité": 100,
+    "quantité_a_acheter": 0,
+    "unité": "g",
+    "catégorie": "autres",
+    "unite_facturation": "kilo",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.5
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.55
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "id": 42,
+    "nom": "œufs",
+    "quantité": 3,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "produits laitiers",
+    "unite_facturation": "unité",
+    "prix_par_magasin": [
+      {
+        "magasin": "Carrefour",
+        "prix": 0.3
+      },
+      {
+        "magasin": "Intermarché",
+        "prix": 0.35
+      },
+      {
+        "magasin": "Autre",
+        "prix": 0
+      }
+    ],
+    "image": "/images/add-image.png",
+    "marque": "sans marque"
+  },
+  {
+    "nom": "rose",
+    "quantité": 1,
+    "quantité_a_acheter": 0,
+    "unité": "pièce",
+    "catégorie": "fleurs",
+    "unite_facturation": "unité",
+    "image": "/images/add-image.png",
+    "marque": "sans marque",
+    "prix_par_magasin": [
+      {
+        "magasin": "Autre",
+        "prix": 2
+      },
+      {
+        "magasin": "carrefour",
+        "prix": 2.25
+      }
+    ],
+    "id": 1745958511790
+  }
 ]

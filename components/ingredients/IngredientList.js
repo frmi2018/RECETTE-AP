@@ -2,19 +2,20 @@ import { useEffect, useState } from "react";
 import styles from "./IngredientList.module.css";
 import Link from "next/link";
 import { fetchIngredients, deleteIngredient } from "@/lib/api-ingredients";
-import IngredientForm from "./IngredientForm/IngredientForm";
-import modal from "./Modal.module.css";
-import CloseIcon from "../CloseIcon";
+import IngredientCard from "../elements/IngredientCard";
+import AddIngredientModal from "./AddIngredientModal";
 
 export default function IngredientList() {
   const [ingredients, setIngredients] = useState([]);
-  const [editingIngredient, setEditingIngredient] = useState(null);
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
-  const [isCreating, setIsCreating] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  // ---
   const [categories, setCategories] = useState([]);
+  // ---
 
   const loadIngredients = async () => {
     try {
@@ -27,23 +28,6 @@ export default function IngredientList() {
       setCategories(allCategories);
     } catch (error) {
       console.error(error);
-    }
-  };
-
-  const handleDelete = async id => {
-    if (confirm("Supprimer cet ingrédient ?")) {
-      await deleteIngredient(id);
-      loadIngredients();
-    }
-  };
-
-  const handleClose = () => {
-    const confirmClose = window.confirm(
-      "Êtes-vous sûr de vouloir fermer sans sauvegarder ? Les modifications ne seront pas enregistrées.",
-    );
-    if (confirmClose) {
-      setEditingIngredient(null);
-      setIsCreating(false);
     }
   };
 
@@ -63,6 +47,29 @@ export default function IngredientList() {
     page * itemsPerPage,
   );
 
+  // ---
+  const handleDelete = async id => {
+    if (confirm("Supprimer cet ingrédient ?")) {
+      await deleteIngredient(id);
+      loadIngredients();
+    }
+  };
+  // ---
+
+  const onClose = () => {
+    const confirmClose = window.confirm(
+      "Êtes-vous sûr de vouloir fermer sans sauvegarder ? Les modifications ne seront pas enregistrées.",
+    );
+    if (confirmClose) {
+      setShowModal(false);
+    }
+  };
+
+  const handleIngredientAdded = () => {
+    // recharge les données si besoin
+    console.log("Ingrédient ajouté !");
+  };
+
   const uniqueCategories = [
     "all",
     ...new Set(ingredients.map(i => i.catégorie)),
@@ -70,15 +77,7 @@ export default function IngredientList() {
 
   return (
     <div className={styles.container}>
-      <button
-        onClick={() => {
-          setIsCreating(true);
-          setEditingIngredient(null);
-        }}
-        style={{ marginBottom: "10px" }}
-      >
-        ➕ Ajouter un ingrédient
-      </button>
+      <button onClick={() => setShowModal(true)}>Ajouter un ingrédient</button>
       <div className={styles.filters}>
         <input
           type="text"
@@ -99,32 +98,13 @@ export default function IngredientList() {
       </div>
       <div className={styles.grid}>
         {paginatedItems.map(ingredient => {
-          let unitéAffichée = ingredient.unité;
-          if (
-            ingredient.unite_facturation === "unité" &&
-            ingredient.quantité > 1
-          ) {
-            unitéAffichée += "s";
-          }
-
           return (
-            <div className={styles.card} key={ingredient.id}>
-              <Link
-                href={`/ingredients/${ingredient.id}`}
-                className={styles.link}
-              >
-                <h4>{ingredient.nom}</h4>
-                <p>
-                  Quantité : {ingredient.quantité} {unitéAffichée}
-                </p>
-                <p>Catégorie : {ingredient.catégorie}</p>
-              </Link>
-              <div className={styles.actions}>
-                <button onClick={() => setEditingIngredient(ingredient)}>
-                  ✏️
-                </button>
-                <button onClick={() => handleDelete(ingredient.id)}>🗑</button>
-              </div>
+            <div className={styles.link}>
+              <IngredientCard
+                ingredient={ingredient}
+                setShowModal={setShowModal}
+                handleDelete={handleDelete}
+              />
             </div>
           );
         })}
@@ -139,32 +119,12 @@ export default function IngredientList() {
         >
           Suivant
         </button>
-      </div>
-      {(isCreating || editingIngredient) && (
-        <div className={modal.modalOverlay}>
-          <div className={modal.modalContent}>
-            <CloseIcon
-              onClick={handleClose}
-              style={{ position: "absolute", top: 10, right: 15 }}
-            />
-            <h3 style={{ textAlign: "center" }}>
-              {editingIngredient ? "Modifier" : "Ajouter"} un ingrédient
-            </h3>
-            <IngredientForm
-              categories={categories}
-              ingredient={editingIngredient}
-              onSuccess={() => {
-                loadIngredients();
-                setEditingIngredient(null);
-                setIsCreating(false);
-              }}
-              onCancel={() => {
-                setEditingIngredient(null);
-                setIsCreating(false);
-              }}
-            />
-          </div>
-        </div>
+      </div>{" "}
+      {showModal && (
+        <AddIngredientModal
+          onClose={onClose} // ← Gère la fermeture
+          onIngredientAdded={handleIngredientAdded}
+        />
       )}
     </div>
   );

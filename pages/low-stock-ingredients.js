@@ -1,4 +1,4 @@
-import LowStockIngredientsList from "../components/ingredients/LowStockIngredientsList";
+import LowStockIngredientsList from "../components/elements/LowStockIngredientsList";
 
 export default function LowStockIngredientsPage() {
   return (

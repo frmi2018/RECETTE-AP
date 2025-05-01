@@ -1,5 +1,3 @@
-## Appels à mettre dans le fichier modules/ingredients.js
-
 GET /api/brands retourne toutes les marques.
 
 ```js

@@ -25,6 +25,12 @@
   background-color: #f9f9f95d;
 }
 
+.etapeItem2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .dragged {
   opacity: 0.5;
 }
@@ -89,7 +95,8 @@
 }
 
 .ajouterBtn,
-.sauvegarderBtn {
+.sauvegarderBtn,
+.editerBtn {
   padding: 10px 15px;
   border: none;
   border-radius: 6px;
@@ -111,6 +118,14 @@
 
 .sauvegarderBtn:hover {
   background-color: #1c5980;
+}
+
+.editerBtn {
+  background-color: #27ae60;
+}
+
+.editerBtn:hover {
+  background-color: #1e8449;
 }
 
 @keyframes appear {

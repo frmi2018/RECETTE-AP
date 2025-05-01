@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchCart } from "@/lib/cartUtils";
-import IngredientShoppingCard from "./ingredients/IngredientShoppingCard";
+import IngredientShoppingCard from "./elements/IngredientShoppingCard";
 
 export default function IngredientList() {
   const [ingredients, setIngredients] = useState([]);

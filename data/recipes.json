@@ -1,223 +1,539 @@
 [
-    {
+  {
+    "id": 1,
+    "nom": "Spaghetti Bolognaise",
+    "ingrédients": [
+      {
         "id": 1,
-        "nom": "Spaghetti Bolognaise",
-        "ingrédients": [
-            { "id": 1, "quantité": "" },
-            { "id": 2, "quantité": "" },
-            { "id": 3, "quantité": "" },
-            { "id": 4, "quantité": "" },
-            { "id": 5, "quantité": "" },
-            { "id": 6, "quantité": "" },
-            { "id": 7, "quantité": "" },
-            { "id": 8, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Cuire les spaghetti selon les instructions sur l'emballage.","Dans une poêle, chauffer l'huile d'olive, faire revenir l'oignon et l'ail","ajouter la viande hachée et cuire jusqu'à ce qu'elle soit dorée.","Ajouter la sauce tomate, le sel et le poivre.","Laisser mijoter pendant 15 minutes.","Servir la sauce sur les spaghetti."],
-        "temps_préparation": 15,
-        "temps_cuisson": 30,
-        "portions": 4,
-        "type": "plat principal",
-        "calories": 1625,
-        "régime": ["sans gluten"],
-        "image": "/images/add-image.png"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 2,
-        "nom": "Curry de Poulet",
-
-        "ingrédients": [
-            { "id": 9, "quantité": "" },
-            { "id": 3, "quantité": "" },
-            { "id": 4, "quantité": "" },
-            { "id": 10, "quantité": "" },
-            { "id": 11, "quantité": "" },
-            { "id": 12, "quantité": "" },
-            { "id": 7, "quantité": "" },
-            { "id": 8, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Couper le poulet en cubes.","Chauffer l'huile dans une poêle, faire revenir l'oignon, l'ail et le gingembre.","Ajouter le poulet et cuire jusqu'à ce qu'il soit doré.","Incorporer la poudre de curry, le lait de coco, le sel et le poivre.","Laisser mijoter pendant 20 minutes.","Servir avec du riz."],
-        "temps_préparation": 20,
-        "temps_cuisson": 25,
-        "portions": 4,
-        "type": "plat principal",
-        "calories": 1850,
-        "régime": ["sans gluten", "sans lactose"],
-        "image": "/images/add-image.png"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 3,
-        "nom": "Sauté de Légumes",
-
-        "ingrédients": [
-            { "id": 13, "quantité": "" },
-            { "id": 14, "quantité": "" },
-            { "id": 15, "quantité": "" },
-            { "id": 16, "quantité": "" },
-            { "id": 4, "quantité": "" },
-            { "id": 10, "quantité": "" },
-            { "id": 17, "quantité": "" }
-        ],
-        "description": "",
-        "etapes":["Couper les légumes en morceaux de taille bouchée.","Chauffer l'huile de sésame dans un wok, faire revenir l'ail et le gingembre.","Ajouter les légumes et les faire sauter pendant 5-7 minutes.","Ajouter la sauce soja et cuire encore 2 minutes.","Servir chaud."],
-        "temps_préparation": 10,
-        "temps_cuisson": 10,
-        "portions": 2,
-        "type": "accompagnement",
-        "calories": 350,
-        "régime": ["végétarien", "végan", "sans gluten"],
-        "image": "/images/add-image.png"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 4,
-        "nom": "Quiche Lorraine",
-        "ingrédients": [
-            { "id": 18, "quantité": "" },
-            { "id": 19, "quantité": "" },
-            { "id": 20, "quantité": "" },
-            { "id": 21, "quantité": "" },
-            { "id": 22, "quantité": "" },
-            { "id": 23, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Préchauffer le four à 180°C.","Étaler la pâte brisée dans un moule.","Mélanger les œufs, la crème fraîche, le sel et le poivre.","Ajouter les lardons et verser le mélange sur la pâte.","Cuire au four pendant 30 minutes."],
-        "temps_préparation": 15,
-        "temps_cuisson": 30,
-        "portions": 6,
-        "type": "plat principal",
-        "calories": 450,
-        "régime": ["non végétarien"],
-        "image": "/images/add-image.png"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 5,
-        "nom": "Soupe de Légumes",
-
-        "ingrédients": [
-            { "id": 3, "quantité": "" },
-            { "id": 14, "quantité": "" },
-            { "id": 24, "quantité": "" },
-            { "id": 25, "quantité": "" },
-            { "id": 26, "quantité": "" },
-            { "id": 7, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Éplucher et couper les légumes en morceaux.","Faire revenir l'oignon dans une casserole avec un peu d'huile.","Ajouter les légumes, couvrir d'eau et laisser mijoter pendant 30 minutes.","Mixer et servir chaud."],
-        "temps_préparation": 20,
-        "temps_cuisson": 30,
-        "portions": 4,
-        "type": "entrée",
-        "calories": 200,
-        "régime": ["végétarien", "végan"],
-        "image": "/images/add-image.png"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 6,
-        "nom": "Pizza Margherita",
-
-        
-        "ingrédients": [
-            { "id": 27, "quantité": "" },
-            { "id": 5, "quantité": "" },
-            { "id": 28, "quantité": "" },
-            { "id": 29, "quantité": "" },
-            { "id": 7, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Préchauffer le four à 220°C.","Étaler la pâte à pizza.","Étaler la sauce tomate, ajouter la mozzarella et les feuilles de basilic.","Cuire au four pendant 15 minutes."],
-        "temps_préparation": 10,
-        "temps_cuisson": 15,
-        "portions": 4,
-        "type": "plat principal",
-        "calories": 800,
-        "régime": ["végétarien"],
-        "image": "/images/recipes/pizza-margherita.jpg"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 7,
-        "nom": "Ratatouille",
-
-        
-        "ingrédients": [
-            { "id": 13, "quantité": "" },
-            { "id": 14, "quantité": "" },
-            { "id": 15, "quantité": "" },
-            { "id": 30, "quantité": "" },
-            { "id": 31, "quantité": "" },            
-            { "id": 6, "quantité": "" },
-            { "id": 7, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Couper les légumes en morceaux.","Faire revenir l'oignon et l'ail dans une poêle avec de l'huile d'olive.","Ajouter les légumes et laisser mijoter pendant 30 minutes.","Servir chaud ou froid."],
-        "temps_préparation": 15,
-        "temps_cuisson": 30,
-        "portions": 4,
-        "type": "accompagnement",
-        "calories": 250,
-        "régime": ["végétarien", "végan", "sans gluten"],
-        "image": "/images/recipes/ratatouille.jpg"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 8,
-        "nom": "Poulet Rôti",
-
-        "ingrédients": [
-            { "id": 9, "quantité": "" },
-            { "id": 7, "quantité": "" },
-            { "id": 8, "quantité": "" },
-            { "id": 32, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Préchauffer le four à 200°C.","Assaisonner le poulet avec du sel, du poivre et des herbes de Provence.","Cuire au four pendant 1h30.","Servir avec des légumes ou des pommes de terre."],
-        "temps_préparation": 10,
-        "temps_cuisson": 90,
-        "portions": 6,
-        "type": "plat principal",
-        "calories": 1200,
-        "régime": ["non végétarien", "sans gluten"],
-        "image": "/images/add-image.png"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Cuire les spaghetti selon les instructions sur l'emballage.",
+      "Dans une poêle, chauffer l'huile d'olive, faire revenir l'oignon et l'ail",
+      "ajouter la viande hachée et cuire jusqu'à ce qu'elle soit dorée.",
+      "Ajouter la sauce tomate, le sel et le poivre.",
+      "Laisser mijoter pendant 15 minutes.",
+      "Servir la sauce sur les spaghetti."
+    ],
+    "temps_préparation": 15,
+    "temps_cuisson": 30,
+    "portions": 4,
+    "type": "plat principal",
+    "calories": 1625,
+    "régime": [
+      "sans gluten"
+    ],
+    "image": "/images/add-image.png"
+  },
+  {
+    "id": 2,
+    "nom": "Curry de Poulet",
+    "ingrédients": [
+      {
         "id": 9,
-        "nom": "Salade César",
-
-        "ingrédients": [
-            { "id": 33, "quantité": "" },
-            { "id": 34, "quantité": "" },
-            { "id": 35, "quantité": "" },
-            { "id": 36, "quantité": "" },
-            { "id": 37, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Laver et couper la laitue.","Ajouter les croûtons, le poulet grillé et le parmesan.","Mélanger avec la sauce César et servir frais."],
-        "temps_préparation": 15,
-        "temps_cuisson": 0,
-        "portions": 4,
-        "type": "entrée",
-        "calories": 600,
-        "régime": ["non végétarien"],
-        "image": "/images/recipes/salade-cesar.jpg"
-    },
-    {
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 3,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 4,
+        "quantité": "",
+        "unité": ""
+      },
+      {
         "id": 10,
-        "nom": "Brownies au Chocolat",
-
-        "ingrédients": [
-            { "id": 38, "quantité": "" },
-            { "id": 39, "quantité": "" },
-            { "id": 40, "quantité": "" },
-            { "id": 41, "quantité": "" },
-            { "id": 42, "quantité": "" }
-        ],
-        "description": "",
-        "etapes": ["Préchauffer le four à 180°C.","Faire fondre le chocolat et le beurre.","Mélanger avec le sucre, les œufs et la farine.","Verser dans un moule et cuire pendant 25 minutes."],
-        "temps_préparation": 15,
-        "temps_cuisson": 25,
-        "portions": 8,
-        "type": "dessert",
-        "calories": 400,
-        "régime": ["végétarien"],
-        "image": "/images/add-image.png"
-    }
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 11,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 12,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 7,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 8,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Couper le poulet en cubes.",
+      "Chauffer l'huile dans une poêle, faire revenir l'oignon, l'ail et le gingembre.",
+      "Ajouter le poulet et cuire jusqu'à ce qu'il soit doré.",
+      "Incorporer la poudre de curry, le lait de coco, le sel et le poivre.",
+      "Laisser mijoter pendant 20 minutes.",
+      "Servir avec du riz."
+    ],
+    "temps_préparation": 20,
+    "temps_cuisson": 25,
+    "portions": 4,
+    "type": "plat principal",
+    "calories": 1850,
+    "régime": [
+      "sans gluten",
+      "sans lactose"
+    ],
+    "image": "/images/add-image.png"
+  },
+  {
+    "id": 3,
+    "nom": "Sauté de Légumes",
+    "ingrédients": [
+      {
+        "id": 13,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 14,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 15,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 16,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 4,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 10,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 17,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Couper les légumes en morceaux de taille bouchée.",
+      "Chauffer l'huile de sésame dans un wok, faire revenir l'ail et le gingembre.",
+      "Ajouter les légumes et les faire sauter pendant 5-7 minutes.",
+      "Ajouter la sauce soja et cuire encore 2 minutes.",
+      "Servir chaud."
+    ],
+    "temps_préparation": 10,
+    "temps_cuisson": 10,
+    "portions": 2,
+    "type": "accompagnement",
+    "calories": 350,
+    "régime": [
+      "végétarien",
+      "végan",
+      "sans gluten"
+    ],
+    "image": "/images/add-image.png"
+  },
+  {
+    "id": 4,
+    "nom": "Quiche Lorraine",
+    "ingrédients": [
+      {
+        "id": 18,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 19,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 20,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 21,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 22,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 23,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 180°C.",
+      "Étaler la pâte brisée dans un moule.",
+      "Mélanger les œufs, la crème fraîche, le sel et le poivre.",
+      "Ajouter les lardons et verser le mélange sur la pâte.",
+      "Cuire au four pendant 30 minutes."
+    ],
+    "temps_préparation": 15,
+    "temps_cuisson": 30,
+    "portions": 6,
+    "type": "plat principal",
+    "calories": 450,
+    "régime": [
+      "non végétarien"
+    ],
+    "image": "/images/add-image.png"
+  },
+  {
+    "id": 5,
+    "nom": "Soupe de Légumes",
+    "ingrédients": [
+      {
+        "id": 3,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 14,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 24,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 25,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 26,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 7,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Éplucher et couper les légumes en morceaux.",
+      "Faire revenir l'oignon dans une casserole avec un peu d'huile.",
+      "Ajouter les légumes, couvrir d'eau et laisser mijoter pendant 30 minutes.",
+      "Mixer et servir chaud."
+    ],
+    "temps_préparation": 20,
+    "temps_cuisson": 30,
+    "portions": 4,
+    "type": "entrée",
+    "calories": 200,
+    "régime": [
+      "végétarien",
+      "végan"
+    ],
+    "image": "/images/add-image.png"
+  },
+  {
+    "id": 6,
+    "nom": "Pizza Margherita",
+    "ingrédients": [
+      {
+        "id": 27,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 5,
+        "quantité": "500",
+        "unité": "ml"
+      },
+      {
+        "id": 28,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 29,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 7,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 220°C.",
+      "Étaler la pâte à pizza.",
+      "Étaler la sauce tomate, ajouter la mozzarella et les feuilles de basilic.",
+      "Cuire au four pendant 15 minutes."
+    ],
+    "temps_préparation": 10,
+    "temps_cuisson": 15,
+    "portions": 4,
+    "type": "plat principal",
+    "calories": 800,
+    "régime": [
+      "végétarien"
+    ],
+    "image": "/images/recipes/pizza-margherita.jpg"
+  },
+  {
+    "id": 7,
+    "nom": "Ratatouille",
+    "ingrédients": [
+      {
+        "id": 13,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 14,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 15,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 30,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 31,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 6,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 7,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Couper les légumes en morceaux.",
+      "Faire revenir l'oignon et l'ail dans une poêle avec de l'huile d'olive.",
+      "Ajouter les légumes et laisser mijoter pendant 30 minutes.",
+      "Servir chaud ou froid."
+    ],
+    "temps_préparation": 15,
+    "temps_cuisson": 30,
+    "portions": 4,
+    "type": "accompagnement",
+    "calories": 250,
+    "régime": [
+      "végétarien",
+      "végan",
+      "sans gluten"
+    ],
+    "image": "/images/recipes/ratatouille.jpg"
+  },
+  {
+    "id": 8,
+    "nom": "Poulet Rôti",
+    "ingrédients": [
+      {
+        "id": 9,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 7,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 8,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 32,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 200°C.",
+      "Assaisonner le poulet avec du sel, du poivre et des herbes de Provence.",
+      "Cuire au four pendant 1h30.",
+      "Servir avec des légumes ou des pommes de terre."
+    ],
+    "temps_préparation": 10,
+    "temps_cuisson": 90,
+    "portions": 6,
+    "type": "plat principal",
+    "calories": 1200,
+    "régime": [
+      "non végétarien",
+      "sans gluten"
+    ],
+    "image": "/images/add-image.png"
+  },
+  {
+    "id": 9,
+    "nom": "Salade César",
+    "ingrédients": [
+      {
+        "id": 33,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 34,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 35,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 36,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 37,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Laver et couper la laitue.",
+      "Ajouter les croûtons, le poulet grillé et le parmesan.",
+      "Mélanger avec la sauce César et servir frais."
+    ],
+    "temps_préparation": 15,
+    "temps_cuisson": 0,
+    "portions": 4,
+    "type": "entrée",
+    "calories": 600,
+    "régime": [
+      "non végétarien"
+    ],
+    "image": "/images/recipes/salade-cesar.jpg"
+  },
+  {
+    "id": 10,
+    "nom": "Brownies au Chocolat",
+    "ingrédients": [
+      {
+        "id": 38,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 39,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 40,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 41,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 42,
+        "quantité": "",
+        "unité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 180°C.",
+      "Faire fondre le chocolat et le beurre.",
+      "Mélanger avec le sucre, les œufs et la farine.",
+      "Verser dans un moule et cuire pendant 25 minutes."
+    ],
+    "temps_préparation": 15,
+    "temps_cuisson": 25,
+    "portions": 8,
+    "type": "dessert",
+    "calories": 400,
+    "régime": [
+      "végétarien"
+    ],
+    "image": "/images/add-image.png"
+  }
 ]

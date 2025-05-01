@@ -20,7 +20,10 @@ export default function handler(req, res) {
       const fileContent = fs.readFileSync(filePath, "utf8");
       const ingredients = JSON.parse(fileContent);
 
+      // Ajouter le nouveau ingrédient
       ingredients.push(newIngredient);
+
+      // Sauvegarder le nouveau tableau dans ingredients.json
       fs.writeFileSync(filePath, JSON.stringify(ingredients, null, 2), "utf8");
 
       res.status(200).json({ message: "Ingrédient ajouté avec succès" });

@@ -1,5 +1,3 @@
-## Appels à mettre dans le fichier modules/ingredients-id.js
-
 ✅ Exemples d’appels client avec /api/ingredients/:id
 
 ▶ Voir un ingrédient par ID

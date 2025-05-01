@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "../../lib/recipeUtils";
 import { fetchIngredients } from "../../lib/api-ingredients";
-import EditEtapes from "./EditEtapes";
+import EditEtapes from "./EditEtapes/EditEtapes";
+import RecipeIngredients from "./RecipeIngredients/RecipeIngredients";
 import styles from "./Recipe.module.css";
 
 export default function Recipe() {
@@ -11,18 +12,18 @@ export default function Recipe() {
   const [recipe, setRecipe] = useState(null);
   const [ingredientRecipe, setIngredientRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showIngredients, setShowIngredients] = useState(true);
 
   useEffect(() => {
     if (!id) return;
 
-    // loadData : Cette fonction prend deux arguments :
-    // fetchFunction : La fonction de récupération des données (comme fetchRecipe ou fetchIngredients).
-    // setDataFunction : La fonction pour mettre à jour l'état (comme setRecipe ou setIngredientRecipe).
-
-    const loadData = async (fetchFunction, setDataFunction) => {
+    const loadAllData = async () => {
       try {
-        const data = await fetchFunction();
-        setDataFunction(data);
+        const recipeData = await fetchRecipe(id);
+        setRecipe(recipeData);
+
+        const ingredientData = await fetchIngredients();
+        setIngredientRecipe(ingredientData);
       } catch (error) {
         console.error("Erreur de chargement :", error);
       } finally {
@@ -30,8 +31,7 @@ export default function Recipe() {
       }
     };
 
-    loadData(() => fetchRecipe(id), setRecipe);
-    loadData(fetchIngredients, setIngredientRecipe);
+    loadAllData();
   }, [id]);
 
   if (loading) {
@@ -45,26 +45,37 @@ export default function Recipe() {
   return (
     <div className={styles.editEtapesContainer}>
       <h2 style={{ textAlign: "center" }}>{recipe.nom}</h2>
-      <h3 className={styles.title}>Ingrédients</h3>
-      <div>
-        {recipe.ingrédients.map((ingredient, index) => (
-          <p key={index}>{ingredient.id}</p>
-        ))}
+
+      <div className={styles.switchButtons}>
+        <button
+          onClick={() => setShowIngredients(true)}
+          disabled={showIngredients}
+          className={`${styles.switchButton} ${
+            showIngredients ? styles.switchButtonActive : ""
+          }`}
+        >
+          Ingrédients
+        </button>
+        <button
+          onClick={() => setShowIngredients(false)}
+          disabled={!showIngredients}
+          className={`${styles.switchButton} ${
+            !showIngredients ? styles.switchButtonActive : ""
+          }`}
+        >
+          Étapes
+        </button>
       </div>
-      <h3 className={styles.title}>Etapes</h3>
-      <div>
-        {recipe.etapes.map((etape, index) => (
-          <p key={index}>
-            {index + 1}
-            {" - "}
-            {etape}
-          </p>
-        ))}
-      </div>
-      <button type="button" className={styles.ajouterBtn}>
-        Editer les étapes
-      </button>
-      <EditEtapes initialEtapes={recipe.etapes} />
+
+      {showIngredients ? (
+        <RecipeIngredients
+          ingredients={recipe.ingrédients}
+          recipeId={recipe.id}
+          onUpdate={() => loadData(() => fetchRecipe(id), setRecipe)}
+        />
+      ) : (
+        <EditEtapes initialEtapes={recipe.etapes} />
+      )}
     </div>
   );
 }

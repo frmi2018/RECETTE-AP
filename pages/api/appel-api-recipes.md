@@ -1,6 +1,6 @@
 ✅ Exemples d’appels client avec /api/ingredients
 
-🗑 Supprimer un ingrédient
+🗑 Supprimer une recette
 
 ```js
 await fetch("/api/ingredients", {
@@ -10,7 +10,7 @@ await fetch("/api/ingredients", {
 });
 ```
 
-📝 Mettre à jour un ingrédient
+📝 Mettre à jour une recette
 
 ```js
 await fetch("/api/ingredients", {
@@ -29,30 +29,30 @@ await fetch("/api/ingredients", {
 });
 ```
 
-✅ 1. Voir tous les ingrédients (GET)
+✅ 1. Voir toutes les recettes (GET)
 
 ```js
 const getAllIngredients = async () => {
   const response = await fetch("/api/ingredients");
   const data = await response.json();
-  console.log("Tous les ingrédients :", data);
+  console.log("Tous les recettes :", data);
 };
 ```
 
-▶ Voir un ingrédient par ID
+▶ Voir une recette par ID
 
-Remarque : utiliser /api/ingredients/:id sinon il faut d'abord récupérer tous les ingrédients et filtrer localement :
+Remarque : utiliser /api/ingredients/:id sinon il faut d'abord récupérer tous les recettes et filtrer localement :
 
 ```js
 const getIngredientById = async id => {
   const response = await fetch("/api/ingredients");
   const data = await response.json();
   const ingredient = data.find(item => item.id === id);
-  console.log("Ingrédient trouvé :", ingredient);
+  console.log("recette trouvée :", ingredient);
 };
 ```
 
-✅ Ajouter un nouvel ingrédient (POST)
+✅ Ajouter une nouvelle recette (POST)
 
 ```js
 const addIngredient = async () => {
@@ -83,5 +83,3 @@ const addIngredient = async () => {
   console.log(result);
 };
 ```
-
-Souhaites-tu que je t’aide à créer une interface React (formulaire ou liste) pour ces appels ?

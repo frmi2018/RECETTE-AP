@@ -14,33 +14,28 @@ export default function Recipe() {
   const [loading, setLoading] = useState(true);
   const [showIngredients, setShowIngredients] = useState(true);
 
+  // 🔧 Définie en dehors du useEffect pour pouvoir être réutilisée
+  const loadData = async () => {
+    try {
+      const recipeData = await fetchRecipe(id);
+      setRecipe(recipeData);
+
+      const ingredientData = await fetchIngredients();
+      setIngredientRecipe(ingredientData);
+    } catch (error) {
+      console.error("Erreur de chargement :", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (!id) return;
-
-    const loadAllData = async () => {
-      try {
-        const recipeData = await fetchRecipe(id);
-        setRecipe(recipeData);
-
-        const ingredientData = await fetchIngredients();
-        setIngredientRecipe(ingredientData);
-      } catch (error) {
-        console.error("Erreur de chargement :", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadAllData();
+    loadData();
   }, [id]);
 
-  if (loading) {
-    return <p>Chargement...</p>;
-  }
-
-  if (!recipe) {
-    return <p>Recette introuvable.</p>;
-  }
+  if (loading) return <p>Chargement...</p>;
+  if (!recipe) return <p>Recette introuvable.</p>;
 
   return (
     <div className={styles.editEtapesContainer}>
@@ -71,7 +66,7 @@ export default function Recipe() {
         <RecipeIngredients
           ingredients={recipe.ingrédients}
           recipeId={recipe.id}
-          onUpdate={() => loadData(() => fetchRecipe(id), setRecipe)}
+          onUpdate={loadData} // ✅ maintenant ça fonctionne
         />
       ) : (
         <EditEtapes initialEtapes={recipe.etapes} />

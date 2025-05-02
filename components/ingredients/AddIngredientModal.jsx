@@ -148,7 +148,7 @@ export default function AddIngredientModal({ onClose, onIngredientAdded }) {
           />
 
           <div className={styles.modalActions}>
-            <button type="submit">Ajouter l'ingrédient</button>
+            <button type="submit">Enregistrer</button>
             <button type="button" onClick={onClose}>Annuler</button>
           </div>
         </form>

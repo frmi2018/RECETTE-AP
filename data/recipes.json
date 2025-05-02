@@ -305,7 +305,7 @@
       },
       {
         "id": 5,
-        "quantité": "500",
+        "quantité": "0",
         "unité": "ml"
       },
       {
@@ -320,8 +320,8 @@
       },
       {
         "id": 7,
-        "quantité": "",
-        "unité": ""
+        "quantité": 2,
+        "unité": "g"
       }
     ],
     "description": "",

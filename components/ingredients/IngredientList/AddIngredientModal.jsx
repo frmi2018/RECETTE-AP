@@ -3,19 +3,17 @@ import styles from "./AddIngredientModal.module.css";
 
 export default function AddIngredientModal({ onClose, onIngredientAdded }) {
   const [form, setForm] = useState({
+    id:"",
     nom: "",
-    quantité: "",
-    quantité_a_acheter: "",
-    unité: "",
-    catégorie: "",
-    unite_facturation: "",
+    quantité: 1,
+    unité: "pièce",
+    catégorie: "non définie",
+    unite_facturation: "unité",
     prix_par_magasin: [
-      { magasin: "Carrefour", prix: "" },
-      { magasin: "Intermarché", prix: "" },
-      { magasin: "Autre", prix: "" },
+      { magasin: "inconnu", prix: 1 },
     ],
-    image: "/images/ingredients/default.jpg",
-    marque: "",
+    image: "/images/add-image.png",
+    marque: "sans marque",
   });
 
   const handleChange = (e) => {

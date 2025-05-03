@@ -1,107 +1,86 @@
 import { useState, useEffect } from "react";
-import { fetchCart, saveCartItem } from "@/lib/cartUtils"; // 👈
+import { fetchCart, saveCartItem, deleteCartItem } from "@/lib/cartUtils";
+import styles from "./IngredientLowStockCard.module.css";
 
 export default function IngredientCard({ ingredient }) {
-  const [cart, setCart] = useState([]); // Panier de courses
+  const [cart, setCart] = useState([]);
 
-  // let unitéAffichée = ingredient.unité;
-  // if (ingredient.unite_facturation === "unité" && ingredient.quantité > 1) {
-  //   unitéAffichée = ingredient.unité + "s";
-  // }
-
-  // const addToCart = async ingredient => {
-  //   setCart(prevCart => {
-  //     const existingItem = prevCart.find(item => item.nom === ingredient.nom);
-  //     if (existingItem) {
-  //       // Mise à jour localement aussi
-  //       return prevCart.map(item =>
-  //         item.nom === ingredient.nom
-  //           ? { ...item, quantité_a_acheter: item.quantité_a_acheter + 1 }
-  //           : item,
-  //       );
-  //     } else {
-  //       return [...prevCart, ingredient];
-  //     }
-  //   });
-  //   await saveCartItem(ingredient);
-  //   alert(`${ingredient.nom} a été ajouté au panier !`);
-  // };
+  // Trouver l'ingrédient actuel dans le panier
+  const currentItem = cart.find(item => item.id === ingredient.id);
+  const currentQte = currentItem?.quantité_a_acheter || 0;
 
   const addQteToCart = async ingredient => {
     let updatedItem;
+
     setCart(prevCart => {
       const existingItem = prevCart.find(item => item.id === ingredient.id);
       if (existingItem) {
-        const newCart = prevCart.map(item => {
-          if (item.id === ingredient.id) {
-            updatedItem = {
-              ...item,
-              quantité_a_acheter: item.quantité_a_acheter + 1,
-            };
-            return updatedItem;
-          }
-          return item;
-        });
-        return newCart;
+        updatedItem = {
+          ...existingItem,
+          quantité_a_acheter: existingItem.quantité_a_acheter + 1,
+        };
+        return prevCart.map(item =>
+          item.id === ingredient.id ? updatedItem : item,
+        );
       } else {
-        updatedItem = ingredient;
-        return [...prevCart, ingredient];
+        updatedItem = { ...ingredient, quantité_a_acheter: 1 };
+        return [...prevCart, updatedItem];
       }
     });
 
-    // Attendre un petit délai pour s'assurer que `updatedItem` est bien défini
-    await new Promise(resolve => setTimeout(resolve, 0));
-
-    await fetch("/api/ingredients", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        id: ingredient.id,
-        quantité_a_acheter: nouvelleValeur,
-      }),
+    await saveCartItem({
+      id: ingredient.id,
+      quantité_a_acheter: currentQte + 1,
     });
 
-    // await saveCartItem(updatedItem);
     alert(
-      `Il y a maintenant ${updatedItem.quantité_a_acheter} ${updatedItem.nom} dans le panier !`,
+      `Il y a maintenant ${currentQte + 1} ${ingredient.nom} dans le panier !`,
     );
   };
 
   const subQteToCart = async ingredient => {
-    if (ingredient.quantité_a_acheter <= 0) {
-      // Ne rien faire si la quantité est déjà à 0
-      return;
-    }
+    if (currentQte <= 0) return;
 
     let updatedItem;
 
     setCart(prevCart => {
       const existingItem = prevCart.find(item => item.id === ingredient.id);
       if (existingItem && existingItem.quantité_a_acheter > 0) {
-        const newCart = prevCart.map(item => {
-          if (item.id === ingredient.id) {
-            updatedItem = {
-              ...item,
-              quantité_a_acheter: item.quantité_a_acheter - 1,
-            };
-            return updatedItem;
-          }
-          return item;
-        });
-        return newCart;
-      } else {
-        updatedItem = ingredient;
-        return [...prevCart, ingredient];
+        updatedItem = {
+          ...existingItem,
+          quantité_a_acheter: existingItem.quantité_a_acheter - 1,
+        };
+        return prevCart.map(item =>
+          item.id === ingredient.id ? updatedItem : item,
+        );
       }
+      return prevCart;
     });
 
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await saveCartItem({
+      id: ingredient.id,
+      quantité_a_acheter: currentQte - 1,
+    });
 
-    if (updatedItem) {
-      await saveCartItem(updatedItem);
-      alert(
-        `Il y a maintenant ${updatedItem.quantité_a_acheter} ${updatedItem.nom} dans le panier !`,
-      );
+    alert(
+      `Il y a maintenant ${currentQte - 1} ${ingredient.nom} dans le panier !`,
+    );
+  };
+
+  const deleteFromCart = async ingredient => {
+    const confirmed = window.confirm(
+      `Supprimer complètement ${ingredient.nom} du panier ?`,
+    );
+    if (!confirmed) return;
+
+    setCart(prevCart => prevCart.filter(item => item.id !== ingredient.id));
+
+    try {
+      await deleteCartItem(ingredient.id);
+      alert(`${ingredient.nom} a été retiré du panier.`);
+    } catch (error) {
+      console.error(error);
+      alert("Erreur lors de la suppression de l'ingrédient.");
     }
   };
 
@@ -109,49 +88,40 @@ export default function IngredientCard({ ingredient }) {
     const loadCart = async () => {
       const cart = await fetchCart();
       setCart(cart);
-      console.log(cart);
     };
     loadCart();
   }, []);
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        border: "2px solid black",
-        borderRadius: "5px",
-        padding: "10px",
-        color: "black",
-      }}
-    >
-      <img
-        src={ingredient.image}
-        alt={ingredient.nom}
-        style={{ width: "200px", height: "200px" }}
-      />
-      <h3>{ingredient.nom}</h3>
-      <p>{ingredient.marque}</p>
-      <div>Panier x {ingredient.quantité_a_acheter}</div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "10px",
-        }}
-      >
-        <button onClick={() => addQteToCart(ingredient)}>Ajouter</button>
-        <button
-          onClick={() => subQteToCart(ingredient)}
-          disabled={ingredient.quantité_a_acheter <= 0}
-          style={{
-            opacity: ingredient.quantité_a_acheter <= 0 ? 0.5 : 1,
-            cursor:
-              ingredient.quantité_a_acheter <= 0 ? "not-allowed" : "pointer",
-          }}
-        >
-          Retirer
-        </button>
-        <button>Supprimer</button>
+    <div className={styles.ingredientCard}>
+      <div className={styles.ingredientImageWrapper}>
+        <img
+          src={ingredient.image}
+          alt={ingredient.nom}
+          className={styles.cardImage}
+        />
+      </div>
+
+      <div className={styles.cardContent}>
+        <strong>{ingredient.nom}</strong>
+        {ingredient.marque ? <div>{ingredient.marque}</div> : <div>&nbsp;</div>}
+
+        <div className={styles.actions}>
+          {/* Ajouter +1 */}
+          <button onClick={() => addQteToCart(ingredient)}>+</button>
+
+          {/* Enlever -1 */}
+          <button
+            onClick={() => subQteToCart(ingredient)}
+            disabled={currentQte <= 0}
+          >
+            -
+          </button>
+
+          {/* Supprimer complètement */}
+          <button onClick={() => deleteFromCart(ingredient)}>🗑</button>
+        </div>
+        <div className={styles.cartQuantity}>{currentQte} dans le panier</div>
       </div>
     </div>
   );

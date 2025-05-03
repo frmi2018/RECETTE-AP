@@ -10,7 +10,7 @@ export default function RecipeList() {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState("all");
   const [page, setPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 3;
   const [showModal, setShowModal] = useState(false);
 
   const loadRecipes = async () => {
@@ -78,19 +78,22 @@ export default function RecipeList() {
           ))}
         </select>
       </div>
-      <div className={styles.grid}>
-        {paginatedItems.map(recipe => {
-          return (
-            <Link
-              key={recipe.id}
-              href={`/recipes/${recipe.id}`}
-              className={styles.link}
-            >
-              <RecipeCard recipe={recipe}></RecipeCard>
-            </Link>
-          );
-        })}
+      <div className={styles.wrapper}>
+        <div className={styles.grid}>
+          {paginatedItems.map(recipe => {
+            return (
+              <Link
+                key={recipe.id}
+                href={`/recipes/${recipe.id}`}
+                className={styles.link}
+              >
+                <RecipeCard recipe={recipe}></RecipeCard>
+              </Link>
+            );
+          })}
+        </div>
       </div>
+
       <div className={styles.pagination}>
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
           Précédent

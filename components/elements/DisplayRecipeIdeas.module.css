@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.recipeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.recipeCardLink {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  flex: 1 1 300px;
+  text-decoration: none;
+  color: #000;
+}
+
+  

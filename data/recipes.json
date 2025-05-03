@@ -61,7 +61,7 @@
     "régime": [
       "sans gluten"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/recipes/spaguetti-bolognaise.jpg"
   },
   {
     "id": 2,
@@ -186,7 +186,7 @@
       "végan",
       "sans gluten"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/recipes/saute-de-legumes.jpg"
   },
   {
     "id": 4,
@@ -239,7 +239,7 @@
     "régime": [
       "non végétarien"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/recipes/quiche-lorraine.jpg"
   },
   {
     "id": 5,
@@ -292,7 +292,7 @@
       "végétarien",
       "végan"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/recipes/soupe-de-legumes.jpg"
   },
   {
     "id": 6,
@@ -322,6 +322,16 @@
         "id": 7,
         "quantité": 2,
         "unité": "g"
+      },
+      {
+        "id": 42,
+        "quantité": "",
+        "unité": ""
+      },
+      {
+        "id": 39,
+        "quantité": "",
+        "unité": ""
       }
     ],
     "description": "",
@@ -534,6 +544,6 @@
     "régime": [
       "végétarien"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/recipes/brownies-au-chocolat.jpg"
   }
 ]

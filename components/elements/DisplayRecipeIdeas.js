@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import { fetchRecipes } from "@/lib/recipeUtils";
 import Link from "next/link";
 import RecipeCard from "./RecipeCard";
+import styles from "./DisplayRecipeIdeas.module.css";
 
-// Afficher 3 recettes aléatoires
 export default function DisplayRecipeIdeas() {
   const [recipes, setRecipes] = useState([]);
 
-  // Récupérer les recettes depuis l'API
   useEffect(() => {
     const loadRecipes = async () => {
       const allRecipes = await fetchRecipes();
@@ -16,13 +15,11 @@ export default function DisplayRecipeIdeas() {
     loadRecipes();
   }, []);
 
-  // Sélectionner 3 recettes aléatoires
   const randomRecipes = () => {
     const shuffled = [...recipes].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 3);
   };
 
-  // Afficher les 3 recettes
   if (recipes.length === 0) {
     return <div>Loading...</div>;
   } else if (recipes.length < 3) {
@@ -30,25 +27,19 @@ export default function DisplayRecipeIdeas() {
   } else {
     const selectedRecipes = randomRecipes();
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-          margin: "20px",
-          alignItems: "center",
-        }}
-      >
-        {selectedRecipes.map(recipe => (
-          <Link
-            href={`/recipes/${recipe.id}`}
-            key={recipe.id}
-            passHref
-            style={{ textDecoration: "none" }}
-          >
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          </Link>
-        ))}
+      <div className={styles.wrapper}>
+        <div className={styles.recipeContainer}>
+          {selectedRecipes.map(recipe => (
+            <Link
+              href={`/recipes/${recipe.id}`}
+              key={recipe.id}
+              passHref
+              className={styles.recipeCardLink}
+            >
+              <RecipeCard recipe={recipe} />
+            </Link>
+          ))}
+        </div>
       </div>
     );
   }

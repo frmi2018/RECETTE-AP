@@ -14,32 +14,48 @@ export default function handler(req, res) {
     }
   } else if (req.method === "POST") {
     try {
-      const newItem = req.body;
+      const { id, quantité_a_acheter } = req.body;
+
+      if (typeof id !== "number" || typeof quantité_a_acheter !== "number") {
+        return res.status(400).json({ message: "Format invalide" });
+      }
 
       const fileContents = fs.readFileSync(cartFilePath, "utf8");
       const cart = JSON.parse(fileContents);
 
-      // Recherche d'un ingrédient existant (par nom ici)
-      const existingItemIndex = cart.findIndex(
-        item => item.nom === newItem.nom,
-      );
+      const existingItemIndex = cart.findIndex(item => item.id === id);
 
       if (existingItemIndex !== -1) {
-        // Ingrédient déjà présent ➔ augmenter la quantité
-        cart[existingItemIndex].quantité += newItem.quantité;
+        cart[existingItemIndex].quantité_a_acheter = quantité_a_acheter;
       } else {
-        // Nouvel ingrédient ➔ ajout normal
-        cart.push(newItem);
+        cart.push({ id, quantité_a_acheter });
       }
 
       fs.writeFileSync(cartFilePath, JSON.stringify(cart, null, 2), "utf8");
-
       res.status(200).json({ message: "Panier mis à jour avec succès" });
     } catch (error) {
       res.status(500).json({ message: "Erreur lors de l'ajout au panier" });
     }
+  } else if (req.method === "DELETE") {
+    try {
+      const { id } = req.body;
+
+      if (typeof id !== "number") {
+        return res.status(400).json({ message: "ID invalide" });
+      }
+
+      const fileContents = fs.readFileSync(cartFilePath, "utf8");
+      let cart = JSON.parse(fileContents);
+
+      cart = cart.filter(item => item.id !== id);
+
+      fs.writeFileSync(cartFilePath, JSON.stringify(cart, null, 2), "utf8");
+      res.status(200).json({ message: `Ingrédient ${id} supprimé du panier` });
+    } catch (error) {
+      res.status(500).json({ message: "Erreur lors de la suppression" });
+    }
   } else {
-    res.setHeader("Allow", ["GET", "POST"]);
+    res.setHeader("Allow", ["GET", "POST", "DELETE"]);
     res.status(405).end(`Méthode ${req.method} non autorisée`);
   }
 }

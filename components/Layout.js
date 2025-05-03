@@ -1,27 +1,16 @@
 import Navigation from "./Navigation";
+import styles from "./Layout.module.css";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="appContainer">
       <header>
         <h1>Application de Recettes</h1>
         <Navigation />
       </header>
       <main>{children}</main>
-      <footer
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <span>réalisé en 2025 avec</span>
-        <img
-          src="/images/icons/coeur.png"
-          alt="heart-icon"
-          style={{ height: "20px", width: "20px", margin: "0 5px" }}
-        />
-        <span>par MICHAUD Franck</span>
+      <footer className={styles.footer}>
+        <span>Réalisé en 2025 par MICHAUD Franck</span>
       </footer>
     </div>
   );

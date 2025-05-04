@@ -28,27 +28,28 @@ export default function Navigation() {
           const isActive = router.pathname === link.href;
           return (
             <li key={link.href} className={styles.navItem}>
-              <Link href={link.href} legacyBehavior>
-                <a className={isActive ? styles.activeLink : styles.link}>
-                  <div className={styles.navContent}>
-                    <img
-                      src={`/images/icons/${link.icon}`}
-                      alt={link.label}
-                      className={styles.icon}
-                    />
-                    <span className={styles.label}>
-                      {link.label.includes(":") ? (
-                        <>
-                          {link.label.split(":")[0]}
-                          <br />
-                          {link.label.split(":")[1].trim()}
-                        </>
-                      ) : (
-                        link.label
-                      )}
-                    </span>
-                  </div>
-                </a>
+              <Link
+                href={link.href}
+                className={isActive ? styles.activeLink : styles.link}
+              >
+                <div className={styles.navContent}>
+                  <img
+                    src={`/images/icons/${link.icon}`}
+                    alt={link.label}
+                    className={styles.icon}
+                  />
+                  <span className={styles.label}>
+                    {link.label.includes(":") ? (
+                      <>
+                        {link.label.split(":")[0]}
+                        <br />
+                        {link.label.split(":")[1].trim()}
+                      </>
+                    ) : (
+                      link.label
+                    )}
+                  </span>
+                </div>
               </Link>
             </li>
           );

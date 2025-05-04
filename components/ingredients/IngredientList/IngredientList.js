@@ -103,13 +103,13 @@ export default function IngredientList() {
       </div>
 
       <IngredientModals
-        showAdd={showModal}
-        showEdit={showEditModal}
-        onCloseAdd={onClose}
-        onCloseEdit={onCloseUpdate}
+        showModal={showModal}
+        showEditModal={showEditModal}
+        onClose={onClose}
+        onCloseUpdate={onCloseUpdate}
         onAdded={loadIngredients}
         onUpdated={loadIngredients}
-        ingredient={paginatedItems}
+        ingredient={selectedIngredient}
       />
     </div>
   );

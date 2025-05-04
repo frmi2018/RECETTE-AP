@@ -8,8 +8,8 @@ export default function IngredientGrid({ items, onEdit, onDelete }) {
         <div key={ingredient.id} className={styles.link}>
           <IngredientCard
             ingredient={ingredient}
-            setShowEditIngredientModal={onEdit}
-            handleDelete={onDelete}
+onEdit={onEdit}
+            onDelete={onDelete}
           />
         </div>
       ))}

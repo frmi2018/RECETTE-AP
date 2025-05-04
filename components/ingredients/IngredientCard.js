@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./IngredientCard.module.css";
 
-export default function IngredientCard({
-  ingredient,
-  setShowEditIngredientModal,
-  handleDelete,
-}) {
+export default function IngredientCard({ ingredient, onDelete, onEdit }) {
   return (
     <div>
       <div className={styles.ingredientCard}>
@@ -31,8 +27,8 @@ export default function IngredientCard({
           )}
           <div>
             {/* Ouvre la modal d'édition de l'ingrédient */}
-            <button onClick={() => setShowEditIngredientModal(true)}>✏️</button>
-            <button onClick={() => handleDelete(ingredient.id)}>🗑</button>
+            <button onClick={() => onEdit(ingredient)}>✏️</button>
+            <button onClick={() => onDelete(ingredient.id)}>🗑</button>
           </div>
         </div>
       </div>

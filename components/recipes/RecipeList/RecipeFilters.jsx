@@ -1,21 +1,27 @@
-import styles from "./RecipeFilters.module.css";
 
-/**
+
+/** JSDoc
  * Composant : RecipeFilters
  * Rôle : Affiche les filtres (recherche + types)
+ * Utilisé dans : RecipeList
  */
 export default function RecipeFilters({ search, setSearch, typeFilter, setTypeFilter, types }) {
   return (
-    <div className={styles.filtersContainer}>
+    <div>
+      <label htmlFor="recipeSearch">Rechercher une recette</label>
       <input
+        id="recipeSearch"
         type="text"
-        className={styles.searchInput}
+        
         placeholder="🔍 Rechercher une recette"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      
+      <label htmlFor="typeFilter">Filtrer par type</label>
       <select
-        className={styles.selectInput}
+        id="typeFilter"
+        
         value={typeFilter}
         onChange={(e) => setTypeFilter(e.target.value)}
       >

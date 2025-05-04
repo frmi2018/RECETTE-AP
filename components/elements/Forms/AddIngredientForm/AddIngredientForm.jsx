@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from ".././Form.module.css";
 
-export default function AddIngredientForm({ onClose, onIngredientAdded }) {
+export default function AddIngredientForm({ onClose, onAdded }) {
   const [form, setForm] = useState({
     id: "",
     nom: "",
@@ -10,7 +10,7 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
     catégorie: "non définie",
     unite_facturation: "Pièce",
     prix_par_magasin: [{ magasin: "inconnu", prix: 1 }],
-    image: "/images/add-image.png",
+    image: "/images/icons/add-image.png",
     marque: "sans marque",
   });
 
@@ -50,11 +50,19 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
         body: JSON.stringify({ ...form, id: Date.now() }),
       });
       if (!response.ok) throw new Error("Échec de l'ajout de l'ingrédient.");
-      onIngredientAdded && onIngredientAdded();
+      onAdded && onAdded();
       onClose();
     } catch (err) {
       console.error("Erreur ajout ingrédient:", err);
       alert("Erreur lors de l'ajout de l'ingrédient.");
+    }
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setForm(prev => ({ ...prev, image: imageUrl }));
     }
   };
 
@@ -67,16 +75,19 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
           <label>
             Nom de l'ingrédient
             <input
-              name="nom"
-              value={form.nom}
-              onChange={handleChange}
-              required
-            />
+  id="nom"
+  name="nom"
+  value={form.nom}
+  onChange={handleChange}
+  required
+/>
+
           </label>
 
           <label>
             Marque
             <input
+              id="marque"
               name="marque"
               value={form.marque}
               onChange={handleChange}
@@ -86,6 +97,7 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
           <label>
             Quantité
             <input
+              id="quantité"
               name="quantité"
               type="number"
               value={form.quantité}
@@ -98,6 +110,7 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
           <label>
             Unité
             <input
+              id="unité"
               name="unité"
               value={form.unité}
               onChange={handleChange}
@@ -108,7 +121,8 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
           <label>
             Catégorie
             <input
-              name="catégorie"
+              id="catégorie"
+                           name="catégorie"
               value={form.catégorie}
               onChange={handleChange}
               required
@@ -118,19 +132,24 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
           <fieldset>
             <legend>Unité de facturation</legend>
 
-            {["Pièce", "Kilo", "Litre"].map((val) => (
-                <label key={val}>
-                  <input
-                    type="radio"
-                    name="unite_facturation"
-                    value={val}
-                    checked={form.unite_facturation === val}
-                    onChange={handleChange}
-                    required
-                  />
-                  {val}
-                </label>
-              ))}
+            {["Pièce", "Kilo", "Litre"].map((val) => {
+  const id = `unite_facturation_${val.toLowerCase()}`;
+  return (
+    <div key={val}>
+      <input
+        type="radio"
+        id={id}
+        name="unite_facturation"
+        value={val}
+        checked={form.unite_facturation === val}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor={id}>{val}</label>
+    </div>
+  );
+})}
+
           </fieldset>
 
           <fieldset>
@@ -145,14 +164,59 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
             </ul>
           </fieldset>
 
-          <label>
-            Image (URL)
-            <input
-              name="image"
-              value={form.image}
-              onChange={handleChange}
-            />
-          </label>
+          <input
+  type="file"
+  accept="image/*"
+  style={{ display: "none" }}
+  id="imageUpload"
+  onChange={handleImageChange}
+/>
+
+<label
+  htmlFor="imageUpload"
+  style={{
+    display: "inline-block",
+    position: "relative",
+    cursor: "pointer",
+    width: "100px",
+    height: "100px",
+  }}
+>
+  <img
+    src={form.image}
+    alt="Aperçu"
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      borderRadius: "6px",
+    }}
+  />
+  <span
+    style={{
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      background: "rgba(0, 0, 0, 0.6)",
+      color: "white",
+      textAlign: "center",
+      fontSize: "12px",
+      padding: "4px 0",
+      opacity: 0,
+      transition: "opacity 0.3s",
+    }}
+  >
+    Changer l'image
+  </span>
+</label>
+
+<style jsx>{`
+  label:hover span {
+    opacity: 1;
+  }
+`}</style>
+
 
           <button type="submit">Enregistrer</button>
         </form>
@@ -168,6 +232,7 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
             <label>
               Nom du magasin
               <input
+              id="magasin"
                 name="magasin"
                 value={newStore.magasin}
                 onChange={handleStoreChange}
@@ -177,6 +242,7 @@ export default function AddIngredientForm({ onClose, onIngredientAdded }) {
             <label>
               Prix
               <input
+              id="prix"
                 name="prix"
                 type="number"
                 value={newStore.prix}

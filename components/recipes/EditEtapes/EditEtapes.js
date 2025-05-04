@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "./EditEtapes.module.css";
 import ingredientsData from "@/data/ingredients.json";
+import { updateRecipe } from "@/lib/api-recipes";
 
-export default function EditEtapes({ initialEtapes }) {
+export default function EditEtapes({ initialEtapes, recetteId }) {
   const [etapes, setEtapes] = useState(initialEtapes || []);
   const [draggedIndex, setDraggedIndex] = useState(null);
   const [dragOverIndex, setDragOverIndex] = useState(null);
@@ -66,9 +67,19 @@ export default function EditEtapes({ initialEtapes }) {
     setEtapes(nouvellesEtapes);
   };
 
-  const sauvegarder = () => {
-    console.log("Étapes mises à jour :", etapes);
-    setIsEditing(false); // Arrêter l'édition après sauvegarde
+  // Fonction pour mettre à jour la recette après modification
+  const handleRecipeUpdate = async () => {
+    console.log(recetteId, { etapes });
+    try {
+      await updateRecipe(recetteId, { etapes: etapes });
+      setIsEditing(false);
+      // onIngredientUpdate && onIngredientUpdate();
+      alert("Modifications enregistrées !");
+      onUpdate && onUpdate(); // Appelle la fonction du parent pour recharger la recette
+    } catch (err) {
+      console.error("Erreur modification des étapes :", err);
+      alert("Échec de la modification.");
+    }
   };
 
   const toggleEditing = () => {
@@ -94,7 +105,7 @@ export default function EditEtapes({ initialEtapes }) {
 
   return (
     <div className={styles.editEtapesContainer}>
-      <h2 className={styles.title}>Étapes de la recette</h2>
+      <h3>Étapes de la recette</h3>
 
       {isEditing ? (
         <>
@@ -142,7 +153,7 @@ export default function EditEtapes({ initialEtapes }) {
             </button>
             <button
               type="button"
-              onClick={sauvegarder}
+              onClick={handleRecipeUpdate}
               className={styles.sauvegarderBtn}
             >
               Sauvegarder

@@ -126,7 +126,7 @@
       "sans gluten",
       "sans lactose"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/icons/pas-image.png"
   },
   {
     "id": 3,
@@ -451,7 +451,7 @@
       "non végétarien",
       "sans gluten"
     ],
-    "image": "/images/add-image.png"
+    "image": "/images/icons/pas-image.png"
   },
   {
     "id": 9,
@@ -497,7 +497,7 @@
     "régime": [
       "non végétarien"
     ],
-    "image": "/images/recipes/salade-cesar.jpg"
+    "image": "/images/icons/pas-image.png"
   },
   {
     "id": 10,
@@ -505,27 +505,27 @@
     "ingrédients": [
       {
         "id": 38,
-        "quantité": "",
-        "unité": ""
+        "quantité": 50,
+        "unité": "g"
       },
       {
         "id": 39,
-        "quantité": "",
-        "unité": ""
+        "quantité": 30,
+        "unité": "g"
       },
       {
         "id": 40,
-        "quantité": "",
-        "unité": ""
+        "quantité": 20,
+        "unité": "g"
       },
       {
         "id": 41,
-        "quantité": "",
-        "unité": ""
+        "quantité": 100,
+        "unité": "g"
       },
       {
         "id": 42,
-        "quantité": "",
+        "quantité": 2,
         "unité": ""
       }
     ],

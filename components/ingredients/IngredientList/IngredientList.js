@@ -13,6 +13,7 @@ export default function IngredientList() {
   const itemsPerPage = 3;
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedIngredient, setSelectedIngredient] = useState(null);
 
   const loadIngredients = async () => {
     try {
@@ -57,24 +58,34 @@ export default function IngredientList() {
   };
 
   const onCloseUpdate = () => {
-    if (confirm("Fermer sans sauvegarder ?")) setShowEditModal(false);
+    if (confirm("Fermer sans sauvegarder ?")) {
+      setShowEditModal(false);
+      setSelectedIngredient(null);
+    }
   };
 
   return (
     <div className={styles.container}>
-      <button onClick={() => setShowModal(true)}>Ajouter un ingrédient</button>
+      <div className={styles.filters}>
+        <button onClick={() => setShowModal(true)}>
+          Ajouter un ingrédient
+        </button>
 
-      <IngredientFilters
-        search={search}
-        setSearch={setSearch}
-        categoryFilter={categoryFilter}
-        setCategoryFilter={setCategoryFilter}
-        categories={uniqueCategories}
-      />
+        <IngredientFilters
+          search={search}
+          setSearch={setSearch}
+          categoryFilter={categoryFilter}
+          setCategoryFilter={setCategoryFilter}
+          categories={uniqueCategories}
+        />
+      </div>
       <div className={styles.wrapper}>
         <IngredientGrid
           items={paginatedItems}
-          onEdit={() => setShowEditModal(true)}
+          onEdit={ingredient => {
+            setSelectedIngredient(ingredient);
+            setShowEditModal(true);
+          }}
           onDelete={handleDelete}
         />
       </div>
@@ -98,6 +109,7 @@ export default function IngredientList() {
         onCloseEdit={onCloseUpdate}
         onAdded={loadIngredients}
         onUpdated={loadIngredients}
+        ingredient={paginatedItems}
       />
     </div>
   );

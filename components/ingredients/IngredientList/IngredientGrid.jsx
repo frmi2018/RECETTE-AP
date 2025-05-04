@@ -1,4 +1,4 @@
-import IngredientCard from "../../elements/IngredientCard";
+import IngredientCard from "../IngredientCard";
 import styles from "./IngredientList.module.css";
 
 export default function IngredientGrid({ items, onEdit, onDelete }) {

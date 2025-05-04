@@ -5,7 +5,7 @@
  */
 
 export default function IngredientFilters({ search, setSearch, categoryFilter, setCategoryFilter, categories }) {
-    return (
+    return (<>
       <div>
         <input
           type="text"
@@ -13,6 +13,8 @@ export default function IngredientFilters({ search, setSearch, categoryFilter, s
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
+        </div>
+        <div>
         <select value={categoryFilter} onChange={e => setCategoryFilter(e.target.value)}>
           {categories.map(cat => (
             <option key={cat} value={cat}>
@@ -20,7 +22,7 @@ export default function IngredientFilters({ search, setSearch, categoryFilter, s
             </option>
           ))}
         </select>
-      </div>
+      </div></>
     );
   }
   

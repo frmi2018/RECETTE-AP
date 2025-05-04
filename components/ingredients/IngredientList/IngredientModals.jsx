@@ -1,9 +1,10 @@
-import AddIngredientModal from "./AddIngredientModal";
-import EditIngredientModal from "./EditIngredientModal";
+import AddIngredientModal from "../../elements/Forms/AddIngredientForm/AddIngredientForm";
+import EditIngredientModal from "../../elements/Forms/UpdateIngredientForm/UpdateIngredientForm";
 
 export default function IngredientModals({
   showAdd,
   showEdit,
+  ingredient,
   onCloseAdd,
   onCloseEdit,
   onAdded,
@@ -15,7 +16,7 @@ export default function IngredientModals({
         <AddIngredientModal onClose={onCloseAdd} onIngredientAdded={onAdded} />
       )}
       {showEdit && (
-        <EditIngredientModal onCloseUpdate={onCloseEdit} onIngredientUpdated={onUpdated} />
+        <EditIngredientModal onCloseUpdate={onCloseEdit} onIngredientUpdated={onUpdated} ingredient={ingredient}/>
       )}
     </>
   );

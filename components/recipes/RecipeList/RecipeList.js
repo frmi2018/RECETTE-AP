@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./RecipeList.module.css";
-import Link from "next/link";
 import { fetchRecipes } from "@/lib/api-recipes";
-import RecipeCard from "../../elements/RecipeCard";
-import AddRecipeModal from "../AddRecipeModal/AddRecipeModal";
+import RecipeFilters from "./RecipeFilters";
+import Link from "next/link";
+import RecipeCard from "../RecipeCard";
+import AddRecipeModal from "../../elements/Forms/AddRecipeForm/AddRecipeForm";
+import RecipeGrid from "./RecipeGrid";
 
 export default function RecipeList() {
   const [recipes, setRecipes] = useState([]);
@@ -59,39 +61,18 @@ export default function RecipeList() {
 
   return (
     <div className={styles.container}>
-      <button onClick={() => setShowModal(true)}>Ajouter une recette</button>
       <div className={styles.filters}>
-        <input
-          type="text"
-          placeholder="🔍 Rechercher une recette"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
+        <button onClick={() => setShowModal(true)}>Ajouter une recette</button>
+        <RecipeFilters
+          search={search}
+          setSearch={setSearch}
+          typeFilter={typeFilter}
+          setTypeFilter={setTypeFilter}
+          types={uniqueTypes}
         />
-        <select
-          value={typeFilter}
-          onChange={e => setTypeFilter(e.target.value)}
-        >
-          {uniqueTypes.map(typ => (
-            <option key={typ} value={typ}>
-              {typ === "all" ? "Toutes les types" : typ}
-            </option>
-          ))}
-        </select>
       </div>
       <div className={styles.wrapper}>
-        <div className={styles.grid}>
-          {paginatedItems.map(recipe => {
-            return (
-              <Link
-                key={recipe.id}
-                href={`/recipes/${recipe.id}`}
-                className={styles.link}
-              >
-                <RecipeCard recipe={recipe}></RecipeCard>
-              </Link>
-            );
-          })}
-        </div>
+        <RecipeGrid items={paginatedItems} />
       </div>
 
       <div className={styles.pagination}>

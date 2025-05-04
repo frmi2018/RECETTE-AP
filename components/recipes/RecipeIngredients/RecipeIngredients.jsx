@@ -1,9 +1,9 @@
 import { useState } from "react";
 import ingredientsData from "@/data/ingredients.json";
 import { updateRecipe } from "../../../lib/api-recipes";
-import styles from "./RecipeIngredients.module.css";
-import EditIngredientModal from "../EditIngredientModal/EditIngredientModal";
-import AddIngredientRecipeModal from "../AddIngredientRecipeModal/AddIngredientRecipeModal";
+import EditIngredientModal from "../../elements/Forms/UpdateIngredientInRecipeForm/UpdateIngredientInRecipeForm";
+import AddIngredientRecipeModal from "../../elements/Forms/AddIngredientInRecipeForm/AddIngredientInRecipeForm";
+import styles from './SelectedIngredientsList.module.css';
 
 export default function RecipeIngredients({ ingredients, recipeId, onUpdate }) {
   const [selectedIngredient, setSelectedIngredient] = useState(null);
@@ -101,37 +101,36 @@ export default function RecipeIngredients({ ingredients, recipeId, onUpdate }) {
   return (
     <div>
 
-      <h3 className={styles.title}>Ingrédients</h3>
+      <h3>Ingrédients</h3>
 
-      <div className={styles.ingredientGrid}>
-        {selectedIngredients.map((ingredient, index) => (
-          <div key={index} className={styles.ingredientCard}>
-            <div className={styles.cardImageWrapper}>
-              <img
-                src={ingredient.image}
-                alt={ingredient.nom}
-                className={styles.cardImage}
-              />
-            </div>
-            <div className={styles.cardContent}>
-              <strong>{ingredient.nom}</strong>
+      <div>
+      {selectedIngredients.map((ingredient, index) => (
+  <div key={index} className={styles.ingredientRow}>
+    <img
+      src={ingredient.image}
+      alt={ingredient.nom}
+      className={styles.ingredientImage}
+    />
 
-              {(ingredient.quantité || ingredient.unité) ? (
-                <div>{ingredient.quantité} {ingredient.unité}</div>
-              ) : (
-                <div>&nbsp;</div>
-              )}
-              
-              <div className={styles.buttonGroup}>
-                <button onClick={() => openModal(ingredient)}>✏️ Éditer</button>
-                <button onClick={() => handleDelete(ingredient)}>🗑 Supprimer</button>
-              </div>
-            </div>
-          </div>
-        ))}
+    <strong className={styles.ingredientName}>{ingredient.nom}</strong>
+
+    {(ingredient.quantité || ingredient.unité) ? (
+      <div className={styles.ingredientQuantity}>
+        {ingredient.quantité} {ingredient.unité}
+      </div>
+    ) : (
+      <div className={styles.ingredientQuantity}>&nbsp;</div>
+    )}
+
+    <div className={styles.actions}>
+      <button onClick={() => openModal(ingredient)}>✏️ Éditer</button>
+      <button onClick={() => handleDelete(ingredient)}>🗑 Supprimer</button>
+    </div>
+  </div>
+))}
         
         {/* Bouton pour ouvrir la modal d'ajout d'ingrédient */}
-        <div className={styles.ingredientCard}>
+        <div>
           <button onClick={handleAddIngredientRecipe}>Ajouter un ingrédient</button>
         </div>
       </div>

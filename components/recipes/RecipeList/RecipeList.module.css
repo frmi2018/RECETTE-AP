@@ -1,11 +1,21 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
 .container {
-    padding: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 20px auto;
+  justify-content: center;
+}
+
   
   .filters {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
   }
   
   .filters input,
@@ -14,17 +24,6 @@
     font-size: 16px;
   }
 
-
-  .grid{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1000px;
-    width: 100%;
-    margin: 20px auto;
-    justify-content: center;
-  }
-  
   .card {
     background: #f9f9f9;
     border: 1px solid #ddd;
@@ -42,24 +41,11 @@
     color: inherit;
   }
   
-  .actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .actions button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
   .pagination {
-    margin: 20px 0;
     display: flex;
     justify-content: center;
     gap: 10px;
+
   }
   
   .pagination button {

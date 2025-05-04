@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { fetchRecipe } from "../../lib/recipeUtils";
+import { fetchRecipe } from "../../lib/api-recipes";
 import { fetchIngredients } from "../../lib/api-ingredients";
 import EditEtapes from "./EditEtapes/EditEtapes";
 import RecipeIngredients from "./RecipeIngredients/RecipeIngredients";
@@ -69,7 +69,11 @@ export default function Recipe() {
           onUpdate={loadData} // ✅ maintenant ça fonctionne
         />
       ) : (
-        <EditEtapes initialEtapes={recipe.etapes} />
+        <EditEtapes
+          initialEtapes={recipe.etapes}
+          recetteId={id}
+          onUpdate={loadData} // ✅ maintenant ça fonctionne
+        />
       )}
     </div>
   );

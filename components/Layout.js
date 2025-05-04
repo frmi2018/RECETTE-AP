@@ -3,14 +3,22 @@ import styles from "./Layout.module.css";
 
 export default function Layout({ children }) {
   return (
-    <div className="appContainer">
-      <header>
-        <h1>Application de Recettes</h1>
+    <div className={styles.appContainer}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Application de Recettes</h1>
         <Navigation />
       </header>
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
-        <span>Réalisé en 2025 par MICHAUD Franck</span>
+        <span>
+          réalisé en 2025 avec{" "}
+          <img
+            src="/images/icons/coeur.png"
+            alt="heart icon"
+            className={styles.heartIcon}
+          />{" "}
+          par MICHAUD Franck
+        </span>
       </footer>
     </div>
   );

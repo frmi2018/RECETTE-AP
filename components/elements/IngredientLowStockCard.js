@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchCart, saveCartItem, deleteCartItem } from "@/lib/cartUtils";
-import styles from "./IngredientLowStockCard.module.css";
+import { fetchCart, saveCartItem, deleteCartItem } from "@/lib/api-cart";
 
 export default function IngredientCard({ ingredient }) {
   const [cart, setCart] = useState([]);
@@ -93,20 +92,16 @@ export default function IngredientCard({ ingredient }) {
   }, []);
 
   return (
-    <div className={styles.ingredientCard}>
-      <div className={styles.ingredientImageWrapper}>
-        <img
-          src={ingredient.image}
-          alt={ingredient.nom}
-          className={styles.cardImage}
-        />
+    <div>
+      <div>
+        <img src={ingredient.image} alt={ingredient.nom} />
       </div>
 
-      <div className={styles.cardContent}>
+      <div>
         <strong>{ingredient.nom}</strong>
         {ingredient.marque ? <div>{ingredient.marque}</div> : <div>&nbsp;</div>}
 
-        <div className={styles.actions}>
+        <div>
           {/* Ajouter +1 */}
           <button onClick={() => addQteToCart(ingredient)}>+</button>
 
@@ -121,7 +116,7 @@ export default function IngredientCard({ ingredient }) {
           {/* Supprimer complètement */}
           <button onClick={() => deleteFromCart(ingredient)}>🗑</button>
         </div>
-        <div className={styles.cartQuantity}>{currentQte} dans le panier</div>
+        <div>{currentQte} dans le panier</div>
       </div>
     </div>
   );

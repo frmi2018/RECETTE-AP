@@ -1,33 +1,41 @@
 .appContainer {
-    background-color: rosybrown;
-  }
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .header {
-    background-color: rgb(158, 40, 40);
-  }
+  background-color: #ffffff;
+  padding: 15px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
 
-  .main {
-    background-color: yellowgreen;
-  }
-  .footer {
-    background-color: #2c3e50;
-    color: white;
-    font-size: 0.9rem;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .heartIcon {
-    height: 20px;
-    width: 20px;
-    margin: 0 5px;
-    color:white
-  }
-  
-  .navItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    margin: 0 10px;
-  }
+.title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  font-size: 0.9rem;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.heartIcon {
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  margin: 0 5px;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(96%) saturate(5244%) hue-rotate(346deg) brightness(102%) contrast(103%);
+}

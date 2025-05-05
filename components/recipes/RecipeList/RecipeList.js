@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "./RecipeList.module.css";
 import { fetchRecipes } from "@/lib/api-recipes";
 import RecipeFilters from "./RecipeFilters";
-import Link from "next/link";
-import RecipeCard from "../RecipeCard";
 import AddRecipeModal from "../../elements/Forms/AddRecipeForm/AddRecipeForm";
 import RecipeGrid from "./RecipeGrid";
 

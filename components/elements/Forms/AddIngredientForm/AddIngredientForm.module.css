@@ -1,0 +1,29 @@
+.imageUpload {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+  }
+  .imageUpload img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  .imageUpload span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .imageUpload:hover span {
+    opacity: 1;
+  }
+  

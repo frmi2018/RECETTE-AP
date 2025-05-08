@@ -9,6 +9,7 @@ export default function RecipeList() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState("all");
+  const [types, setTypes] = useState([]);
   const [page, setPage] = useState(1);
   const itemsPerPage = 3;
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +22,7 @@ export default function RecipeList() {
       const allTypes = Array.from(
         new Set(data.map(item => item.types).filter(Boolean)),
       ).sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
-      setTypes(allTypes);
+      setTypes(allTypes); // ✅
     } catch (error) {
       console.error(error);
     }
@@ -58,21 +59,31 @@ export default function RecipeList() {
   const uniqueTypes = ["all", ...new Set(recipes.map(i => i.type))];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.filters}>
-        <button onClick={() => setShowModal(true)}>Ajouter une recette</button>
-        <RecipeFilters
-          search={search}
-          setSearch={setSearch}
-          typeFilter={typeFilter}
-          setTypeFilter={setTypeFilter}
-          types={uniqueTypes}
-        />
-      </div>
-      <div className={styles.wrapper}>
-        <RecipeGrid items={paginatedItems} />
-      </div>
+    <>
+      <div className={styles.container}>
+        <div className={styles.filters}>
+          <button onClick={() => setShowModal(true)}>
+            Ajouter une recette
+          </button>
+          <RecipeFilters
+            search={search}
+            setSearch={setSearch}
+            typeFilter={typeFilter}
+            setTypeFilter={setTypeFilter}
+            types={uniqueTypes}
+          />
+        </div>
+        <div className={styles.wrapper}>
+          <RecipeGrid items={paginatedItems} />
+        </div>
 
+        {showModal && (
+          <AddRecipeModal
+            onClose={onClose} // ← Gère la fermeture
+            onRecipeAdded={handleRecipeAdded}
+          />
+        )}
+      </div>
       <div className={styles.pagination}>
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
           Précédent
@@ -84,13 +95,6 @@ export default function RecipeList() {
           Suivant
         </button>
       </div>
-
-      {showModal && (
-        <AddRecipeModal
-          onClose={onClose} // ← Gère la fermeture
-          onRecipeAdded={handleRecipeAdded}
-        />
-      )}
-    </div>
+    </>
   );
 }

@@ -16,6 +16,14 @@
   .ingredientName {
     flex: 2;
     font-weight: bold;
+
+  }
+
+  .quantityAndActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
   }
   
   .ingredientQuantity {
@@ -24,6 +32,11 @@
   
   .actions {
     display: flex;
-    gap: 8px;
+
+    gap: 2rem;
+
   }
+
+
+  
   

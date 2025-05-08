@@ -76,27 +76,8 @@ if (!unitValue) {
     <div className={styles.modalBackdrop}>
       <div className={styles.modal}>
       <button type="button" onClick={onCancel}>Annuler</button>
-        <h3>Modifier l'ingrédient</h3>
+        <h3>{editedIngredient.nom}</h3>
 
-        <label htmlFor="ingredient-nom">
-          Nom :
-          <input
-          id="ingredient-nom"
-            type="text"
-            value={editedIngredient.nom}
-            disabled
-          />
-        </label>
-
-        <label htmlFor="ingredient-photo">
-          Photo (URL) :
-          <input
-          id="ingredient-photo"
-            type="text"
-            value={editedIngredient.image}
-            disabled
-          />
-        </label>
         <label htmlFor="ingredient-quantité">
   Quantité :
   <input

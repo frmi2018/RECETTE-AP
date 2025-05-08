@@ -19,6 +19,7 @@
   width: 90%;
   max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Nécessaire pour positionner la croix */
 }
 
 .modal label {
@@ -55,4 +56,19 @@
 
 .modalButtons button:last-child {
   background-color: #ccc;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.closeButton:hover {
+  color: #ff5555;
 }

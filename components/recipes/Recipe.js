@@ -52,7 +52,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "../../lib/api-recipes";
-import { fetchIngredients } from "../../lib/api-ingredients";
+// import { fetchIngredients } from "../../lib/api-ingredients";
 import EditEtapes from "./EditEtapes/EditEtapes";
 import RecipeIngredients from "./RecipeIngredients/RecipeIngredients";
 import styles from "./Recipe.module.css";
@@ -70,10 +70,10 @@ export default function Recipe() {
   const loadData = async () => {
     try {
       console.log(id);
-      const recipeData = await fetchRecipe(id);
+      const recipeData = await fetchRecipe(id); // Passe `recipeId` au lieu de `id`
       setRecipe(recipeData);
-      const ingredientData = await fetchIngredients();
-      setIngredientRecipe(ingredientData);
+      // const ingredientData = await fetchIngredients();
+      // setIngredientRecipe(ingredientData);
     } catch (error) {
       console.error("Erreur de chargement :", error);
     } finally {
@@ -82,7 +82,7 @@ export default function Recipe() {
   };
 
   useEffect(() => {
-    if (!id || isNaN(parseInt(id, 10))) return;
+    if (!id || isNaN(parseInt(id, 10))) return; // Assure-toi que l'ID est valide avant de charger les données
     loadData();
   }, [id]);
 
@@ -91,27 +91,44 @@ export default function Recipe() {
 
   return (
     <div className={styles.recipeContainer}>
-      <h2 style={{ textAlign: "center" }}>{recipe.nom}</h2>
+      <div className={styles.titleContainer}>
+        <div className={styles.cardImageWrapper}>
+          <img
+            src={recipe.image || "/images/icons/pas-image.png"}
+            alt={recipe.nom || "/images/icons/pas-image.png"}
+            className={
+              (recipe.image || "/images/icons/pas-image.png") ===
+              "/images/icons/pas-image.png"
+                ? styles.addImage
+                : styles.cardImage
+            }
+          />
+        </div>
 
-      <div className={styles.switchButtons}>
-        <button
-          onClick={() => setShowIngredients(true)}
-          disabled={showIngredients}
-          className={`${styles.switchButton} ${
-            showIngredients ? styles.switchButtonActive : ""
-          }`}
-        >
-          Ingrédients
-        </button>
-        <button
-          onClick={() => setShowIngredients(false)}
-          disabled={!showIngredients}
-          className={`${styles.switchButton} ${
-            !showIngredients ? styles.switchButtonActive : ""
-          }`}
-        >
-          Étapes
-        </button>
+        <div className={styles.titleWrapper}>
+          <h2>{recipe.nom}</h2>
+
+          <div className={styles.switchButtons}>
+            <button
+              onClick={() => setShowIngredients(true)}
+              disabled={showIngredients}
+              className={`${styles.switchButton} ${
+                showIngredients ? styles.switchButtonActive : ""
+              }`}
+            >
+              Ingrédients
+            </button>
+            <button
+              onClick={() => setShowIngredients(false)}
+              disabled={!showIngredients}
+              className={`${styles.switchButton} ${
+                !showIngredients ? styles.switchButtonActive : ""
+              }`}
+            >
+              Étapes
+            </button>
+          </div>
+        </div>
       </div>
 
       {showIngredients ? (

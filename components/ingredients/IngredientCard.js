@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "./IngredientCard.module.css";
 
-export default function IngredientCard({ ingredient, onDelete, onEdit }) {
+export default function IngredientCard({ ingredient, onEdit, onDelete }) {
+  // Fonction pour ajouter un "s" à "pièce" si la quantité est supérieure à 1
+  const getUnitWithPlural = (quantité, unite_facturation) => {
+    if (unite_facturation === "unité" && quantité > 1) {
+      return `${unité}s`; // Ajoute un "s" à "pièce" si quantité > 1
+    }
+    return unite_facturation;
+  };
+
   return (
     <div>
       <div className={styles.ingredientCard}>
@@ -20,7 +28,11 @@ export default function IngredientCard({ ingredient, onDelete, onEdit }) {
           <strong>{ingredient.nom}</strong>
           {ingredient.quantité || ingredient.unité ? (
             <div>
-              {ingredient.quantité} {ingredient.unité}
+              {ingredient.quantité}{" "}
+              {ingredient.unite_facturation === "unité" &&
+              ingredient.quantité > 1
+                ? `${ingredient.unité}s`
+                : ingredient.unité}
             </div>
           ) : (
             <div>&nbsp;</div>

@@ -49,8 +49,29 @@ export default function handler(req, res) {
         .status(500)
         .json({ message: "Erreur lors de la mise à jour de la recette" });
     }
+  } else if (method === "DELETE") {
+    try {
+      const fileContent = fs.readFileSync(filePath, "utf8");
+      let recipes = JSON.parse(fileContent);
+
+      const initialLength = recipes.length;
+      recipes = recipes.filter(r => r.id !== parseInt(id));
+
+      if (recipes.length === initialLength) {
+        return res
+          .status(404)
+          .json({ message: `Recette avec id ${id} introuvable` });
+      }
+
+      fs.writeFileSync(filePath, JSON.stringify(recipes, null, 2), "utf8");
+      res.status(200).json({ message: "Recette supprimée avec succès" });
+    } catch (error) {
+      res
+        .status(500)
+        .json({ message: "Erreur lors de la suppression de la recette" });
+    }
   } else {
-    res.setHeader("Allow", ["GET", "PUT"]);
+    res.setHeader("Allow", ["GET", "PUT", "DELETE"]);
     res.status(405).end(`Méthode ${method} non autorisée`);
   }
 }

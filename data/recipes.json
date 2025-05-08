@@ -506,7 +506,7 @@
       {
         "id": 38,
         "quantité": 50,
-        "unité": "g"
+        "unité": "morceaux"
       },
       {
         "id": 39,
@@ -526,7 +526,7 @@
       {
         "id": 42,
         "quantité": 2,
-        "unité": ""
+        "unité": "jaunes"
       }
     ],
     "description": "",

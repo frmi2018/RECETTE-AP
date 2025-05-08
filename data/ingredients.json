@@ -457,7 +457,7 @@
     "quantité": 200,
     "unité": "ml",
     "catégorie": "produits laitiers",
-    "unite_facturation": "unité",
+    "unite_facturation": "litre",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -598,18 +598,13 @@
   {
     "id": 26,
     "nom": "basilic",
-    "quantité": 1,
+    "quantité": 2,
     "unité": "botte",
     "catégorie": "herbes",
     "unite_facturation": "unité",
-    "prix_par_magasin": [
-      {
-        "magasin": "Intermarché",
-        "prix": 1.1
-      }
-    ],
-    "image": "/images/icons/pas-image.png",
-    "marque": "intermarché"
+    "prix_par_magasin": [],
+    "image": "blob:http://localhost:3000/5b7d9c8a-cd11-41d9-a1c6-ed677bb35687",
+    "marque": "sans marque"
   },
   {
     "id": 27,
@@ -682,22 +677,6 @@
     ],
     "image": "/images/icons/pas-image.png",
     "marque": "sans marque"
-  },
-  {
-    "id": 30,
-    "nom": "aubergine",
-    "quantité": 8,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "poids",
-    "prix_par_magasin": [
-      {
-        "magasin": "Carrefour",
-        "prix": 1
-      }
-    ],
-    "image": "/images/icons/pas-image.png",
-    "marque": "BONDUELLE"
   },
   {
     "id": 31,

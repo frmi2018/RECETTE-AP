@@ -113,8 +113,7 @@ export default function RecipeIngredients({ ingredients, recipeId, onUpdate }) {
     />
 
     <strong className={styles.ingredientName}>{ingredient.nom}</strong>
-    <div className={styles.quantityAndActions}>
-    <div className={styles.ingredientQuantity}>
+
     {(ingredient.quantité || ingredient.unité) ? (
       <div className={styles.ingredientQuantity}>
         {ingredient.quantité} {ingredient.unité}
@@ -122,16 +121,10 @@ export default function RecipeIngredients({ ingredients, recipeId, onUpdate }) {
     ) : (
       <div className={styles.ingredientQuantity}>&nbsp;</div>
     )}
-    </div>
 
     <div className={styles.actions}>
-    <button onClick={() => openModal(ingredient)}>
-  ✏️
-</button>
-
-
+      <button onClick={() => openModal(ingredient)}>✏️ Modifier</button>
       <button onClick={() => handleDelete(ingredient)}>🗑 Supprimer</button>
-    </div>
     </div>
   </div>
 ))}

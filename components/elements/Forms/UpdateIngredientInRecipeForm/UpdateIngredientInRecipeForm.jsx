@@ -12,8 +12,8 @@ export default function UpdateIngredientInRecipeForm({
 }) {
   const [editedIngredient, setEditedIngredient] = useState(() => ({
     ...initialIngredient,
-    quantité: String(initialIngredient.quantité ?? ''),
-    unité: initialIngredient.unité ?? ''
+    quantite: String(initialIngredient.quantite ?? ''),
+    unite: initialIngredient.unite ?? ''
   }));
   
   

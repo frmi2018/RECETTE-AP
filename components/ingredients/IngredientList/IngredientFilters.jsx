@@ -17,8 +17,11 @@ export default function IngredientFilters({ search, setSearch, categoryFilter, s
   type="text"
   placeholder="🔍 Rechercher un ingrédient"
   value={search}
-  onChange={e => setSearch(e.target.value)}
+  onChange={e => {
+    setSearch(e.target.value);
+  }}
 />
+
 
 <label htmlFor="categoryFilter">Filtrer par catégorie</label>
 <select

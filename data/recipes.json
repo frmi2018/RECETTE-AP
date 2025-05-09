@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nom": "Spaghetti Bolognaise",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 1,
         "quantité": "",
@@ -66,7 +66,7 @@
   {
     "id": 2,
     "nom": "Curry de Poulet",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 9,
         "quantité": "",
@@ -131,7 +131,7 @@
   {
     "id": 3,
     "nom": "Sauté de Légumes",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 13,
         "quantité": "",
@@ -191,7 +191,7 @@
   {
     "id": 4,
     "nom": "Quiche Lorraine",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 18,
         "quantité": "",
@@ -244,7 +244,7 @@
   {
     "id": 5,
     "nom": "Soupe de Légumes",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 3,
         "quantité": "",
@@ -297,7 +297,7 @@
   {
     "id": 6,
     "nom": "Pizza Margherita",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 27,
         "quantité": "",
@@ -354,7 +354,7 @@
   {
     "id": 7,
     "nom": "Ratatouille",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 13,
         "quantité": "",
@@ -413,7 +413,7 @@
   {
     "id": 8,
     "nom": "Poulet Rôti",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 9,
         "quantité": "",
@@ -456,7 +456,7 @@
   {
     "id": 9,
     "nom": "Salade César",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 33,
         "quantité": "",
@@ -502,7 +502,7 @@
   {
     "id": 10,
     "nom": "Brownies au Chocolat",
-    "ingrédients": [
+    "ingredients": [
       {
         "id": 38,
         "quantité": 50,

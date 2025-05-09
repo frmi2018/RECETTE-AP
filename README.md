@@ -5,36 +5,24 @@ Application Next.js pour gérer des recettes de cuisine et les ingrédients asso
 📅 started april 2025
 in progress...
 
+https://recette-ap.vercel.app/
+
 ---
 
 <img src="https://github.com/frmi2018/RECETTE-AP/blob/main/public/images/capture.png" width="480" height=auto>
 
 ## 📁 Structure du projet
 
-components/ # composants  
-data/ # fichiers json
-docs/ # documentation (à venir)  
-modules/ # fonctions utilitaires  
-pages/ # pages du site  
-pages/api # server routes  
-pages/recipes # pages recettes dynamiques  
-public/images/icons  
-public/images/ingredients  
-public/images/recipes  
-public/images/icons  
-public/api/ recipes.json # Liste des recettes  
-public/api/ ingredients.json # Liste des ingrédients  
-styles/ globals.css # Styles globaux
-
 ## ✅ Fonctionnalités actuelles
 
 - ✅ Affichage de 3 idées de recettes en page d'accueil
 - ✅ Affichage des ingrédients
 - ✅ Affichage des recettes
-- ✅ Affichage des ingrédients en rupture de stock
-- 📁 Importation de données mockées depuis JSON
-- 🖼️ Support d’images statiques (via `public/images`)
-- 📄 Pagination des recettes/ingrédients
+- ➕➖ Ajout/suppression d'ingrédients/recettes
+- ✅ Modification recette/ingrédient
+- 🔍 Composant de recherche
+- ↕️ Composant de tri
+- 🗄️ Connexion à une base de données (supabase)
 
 ## 🚀 Lancer le projet localement
 
@@ -54,10 +42,11 @@ Fichiers de configuration présents pour Jest :
 
 ## 🧠 À venir
 
-- ➕➖ Ajout/suppression d'ingrédients/recettes
-- 🔍 Composant de recherche
-- ↕️ Composant de tri
-- 🗄️ Connexion à une base de données
+- panier
+- compte utilisateur
+- partage de recette entre utilisateur
+- ajout d'un lien vers une video youtube dans les recettes
+- SASS
 
 ## ✍️ Auteur
 

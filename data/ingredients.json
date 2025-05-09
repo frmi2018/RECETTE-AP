@@ -2,9 +2,9 @@
   {
     "id": 1,
     "nom": "spaghetti",
-    "quantité": 500,
-    "unité": "g",
-    "catégorie": "pâtes",
+    "quantite": 500,
+    "unite": "g",
+    "categorie": "pâtes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -26,9 +26,9 @@
   {
     "id": 2,
     "nom": "viande hachée",
-    "quantité": 300,
-    "unité": "g",
-    "catégorie": "viandes",
+    "quantite": 300,
+    "unite": "g",
+    "categorie": "viandes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -50,9 +50,9 @@
   {
     "id": 3,
     "nom": "oignon",
-    "quantité": 150,
-    "unité": "g",
-    "catégorie": "légumes",
+    "quantite": 150,
+    "unite": "g",
+    "categorie": "légumes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -74,10 +74,10 @@
   {
     "id": 4,
     "nom": "ail",
-    "quantité": 5,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 5,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -94,10 +94,10 @@
   {
     "id": 5,
     "nom": "sauce tomate",
-    "quantité": 2,
-    "unité": "bouteille",
-    "catégorie": "sauces",
-    "unite_facturation": "unité",
+    "quantite": 2,
+    "unite": "bouteille",
+    "categorie": "sauces",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -118,9 +118,9 @@
   {
     "id": 6,
     "nom": "huile d'olive",
-    "quantité": 1,
-    "unité": "litre",
-    "catégorie": "huiles",
+    "quantite": 1,
+    "unite": "litre",
+    "categorie": "huiles",
     "unite_facturation": "litre",
     "prix_par_magasin": [
       {
@@ -142,9 +142,9 @@
   {
     "id": 7,
     "nom": "sel",
-    "quantité": 500,
-    "unité": "g",
-    "catégorie": "épices",
+    "quantite": 500,
+    "unite": "g",
+    "categorie": "épices",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -166,9 +166,9 @@
   {
     "id": 8,
     "nom": "poivre",
-    "quantité": 100,
-    "unité": "g",
-    "catégorie": "épices",
+    "quantite": 100,
+    "unite": "g",
+    "categorie": "épices",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -190,9 +190,9 @@
   {
     "id": 9,
     "nom": "blanc de poulet",
-    "quantité": 1,
-    "unité": "kg",
-    "catégorie": "viandes",
+    "quantite": 1,
+    "unite": "kg",
+    "categorie": "viandes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -214,9 +214,9 @@
   {
     "id": 10,
     "nom": "gingembre",
-    "quantité": 200,
-    "unité": "g",
-    "catégorie": "épices",
+    "quantite": 200,
+    "unite": "g",
+    "categorie": "épices",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -238,9 +238,9 @@
   {
     "id": 11,
     "nom": "poudre de curry",
-    "quantité": 100,
-    "unité": "g",
-    "catégorie": "épices",
+    "quantite": 100,
+    "unite": "g",
+    "categorie": "épices",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -262,10 +262,10 @@
   {
     "id": 12,
     "nom": "lait de coco",
-    "quantité": 3,
-    "unité": "boîte",
-    "catégorie": "produits laitiers",
-    "unite_facturation": "unité",
+    "quantite": 3,
+    "unite": "boîte",
+    "categorie": "produits laitiers",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -286,10 +286,10 @@
   {
     "id": 13,
     "nom": "brocoli",
-    "quantité": 2,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 2,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -310,10 +310,10 @@
   {
     "id": 14,
     "nom": "carotte",
-    "quantité": 5,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 5,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -334,10 +334,10 @@
   {
     "id": 15,
     "nom": "poivron",
-    "quantité": 0,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 0,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -358,10 +358,10 @@
   {
     "id": 16,
     "nom": "sauce soja",
-    "quantité": 1,
-    "unité": "bouteille",
-    "catégorie": "sauces",
-    "unite_facturation": "unité",
+    "quantite": 1,
+    "unite": "bouteille",
+    "categorie": "sauces",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -382,10 +382,10 @@
   {
     "id": 17,
     "nom": "huile de sésame",
-    "quantité": 1,
-    "unité": "bouteille",
-    "catégorie": "huiles",
-    "unite_facturation": "unité",
+    "quantite": 1,
+    "unite": "bouteille",
+    "categorie": "huiles",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -406,10 +406,10 @@
   {
     "id": 18,
     "nom": "pâte brisée",
-    "quantité": 1,
-    "unité": "rouleau",
-    "catégorie": "pâtes",
-    "unite_facturation": "unité",
+    "quantite": 1,
+    "unite": "rouleau",
+    "categorie": "pâtes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -430,10 +430,10 @@
   {
     "id": 19,
     "nom": "œufs",
-    "quantité": 6,
-    "unité": "pièce",
-    "catégorie": "produits laitiers",
-    "unite_facturation": "unité",
+    "quantite": 6,
+    "unite": "pièce",
+    "categorie": "produits laitiers",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -454,9 +454,9 @@
   {
     "id": 20,
     "nom": "crème fraîche",
-    "quantité": 200,
-    "unité": "ml",
-    "catégorie": "produits laitiers",
+    "quantite": 200,
+    "unite": "ml",
+    "categorie": "produits laitiers",
     "unite_facturation": "litre",
     "prix_par_magasin": [
       {
@@ -478,9 +478,9 @@
   {
     "id": 21,
     "nom": "lardons",
-    "quantité": 150,
-    "unité": "g",
-    "catégorie": "viandes",
+    "quantite": 150,
+    "unite": "g",
+    "categorie": "viandes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -502,9 +502,9 @@
   {
     "id": 22,
     "nom": "herbes de Provence",
-    "quantité": 50,
-    "unité": "g",
-    "catégorie": "épices",
+    "quantite": 50,
+    "unite": "g",
+    "categorie": "épices",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -526,9 +526,9 @@
   {
     "id": 23,
     "nom": "pommes de terre",
-    "quantité": 1,
-    "unité": "kg",
-    "catégorie": "légumes",
+    "quantite": 1,
+    "unite": "kg",
+    "categorie": "légumes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -550,10 +550,10 @@
   {
     "id": 24,
     "nom": "courgette",
-    "quantité": 3,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 3,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -574,10 +574,10 @@
   {
     "id": 25,
     "nom": "tomate",
-    "quantité": 4,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 4,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -598,10 +598,10 @@
   {
     "id": 26,
     "nom": "basilic",
-    "quantité": 2,
-    "unité": "botte",
-    "catégorie": "herbes",
-    "unite_facturation": "unité",
+    "quantite": 2,
+    "unite": "botte",
+    "categorie": "herbes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [],
     "image": "blob:http://localhost:3000/5b7d9c8a-cd11-41d9-a1c6-ed677bb35687",
     "marque": "sans marque"
@@ -609,10 +609,10 @@
   {
     "id": 27,
     "nom": "pâte à pizza",
-    "quantité": 1,
-    "unité": "rouleau",
-    "catégorie": "pâtes",
-    "unite_facturation": "unité",
+    "quantite": 1,
+    "unite": "rouleau",
+    "categorie": "pâtes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -633,9 +633,9 @@
   {
     "id": 28,
     "nom": "mozzarella",
-    "quantité": 200,
-    "unité": "g",
-    "catégorie": "produits laitiers",
+    "quantite": 200,
+    "unite": "g",
+    "categorie": "produits laitiers",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -657,10 +657,10 @@
   {
     "id": 29,
     "nom": "basilic frais",
-    "quantité": 1,
-    "unité": "botte",
-    "catégorie": "herbes",
-    "unite_facturation": "unité",
+    "quantite": 1,
+    "unite": "botte",
+    "categorie": "herbes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -681,10 +681,10 @@
   {
     "id": 31,
     "nom": "zucchini",
-    "quantité": 2,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 2,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -705,9 +705,9 @@
   {
     "id": 32,
     "nom": "herbes de Provence",
-    "quantité": 50,
-    "unité": "g",
-    "catégorie": "épices",
+    "quantite": 50,
+    "unite": "g",
+    "categorie": "épices",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -729,10 +729,10 @@
   {
     "id": 33,
     "nom": "laitue",
-    "quantité": 0,
-    "unité": "pièce",
-    "catégorie": "légumes",
-    "unite_facturation": "unité",
+    "quantite": 0,
+    "unite": "pièce",
+    "categorie": "légumes",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -753,9 +753,9 @@
   {
     "id": 34,
     "nom": "croûtons",
-    "quantité": 100,
-    "unité": "g",
-    "catégorie": "autres",
+    "quantite": 100,
+    "unite": "g",
+    "categorie": "autres",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -777,9 +777,9 @@
   {
     "id": 35,
     "nom": "parmesan",
-    "quantité": 50,
-    "unité": "g",
-    "catégorie": "produits laitiers",
+    "quantite": 50,
+    "unite": "g",
+    "categorie": "produits laitiers",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -801,10 +801,10 @@
   {
     "id": 36,
     "nom": "sauce César",
-    "quantité": 1,
-    "unité": "bouteille",
-    "catégorie": "sauces",
-    "unite_facturation": "unité",
+    "quantite": 1,
+    "unite": "bouteille",
+    "categorie": "sauces",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",
@@ -825,9 +825,9 @@
   {
     "id": 37,
     "nom": "poulet grillé",
-    "quantité": 200,
-    "unité": "g",
-    "catégorie": "viandes",
+    "quantite": 200,
+    "unite": "g",
+    "categorie": "viandes",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -849,9 +849,9 @@
   {
     "id": 38,
     "nom": "chocolat noir",
-    "quantité": 200,
-    "unité": "g",
-    "catégorie": "autres",
+    "quantite": 200,
+    "unite": "g",
+    "categorie": "autres",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -873,9 +873,9 @@
   {
     "id": 39,
     "nom": "beurre",
-    "quantité": 100,
-    "unité": "g",
-    "catégorie": "produits laitiers",
+    "quantite": 100,
+    "unite": "g",
+    "categorie": "produits laitiers",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -897,9 +897,9 @@
   {
     "id": 40,
     "nom": "sucre",
-    "quantité": 150,
-    "unité": "g",
-    "catégorie": "autres",
+    "quantite": 150,
+    "unite": "g",
+    "categorie": "autres",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -921,9 +921,9 @@
   {
     "id": 41,
     "nom": "farine",
-    "quantité": 100,
-    "unité": "g",
-    "catégorie": "autres",
+    "quantite": 100,
+    "unite": "g",
+    "categorie": "autres",
     "unite_facturation": "kilo",
     "prix_par_magasin": [
       {
@@ -945,10 +945,10 @@
   {
     "id": 42,
     "nom": "œufs",
-    "quantité": 3,
-    "unité": "pièce",
-    "catégorie": "produits laitiers",
-    "unite_facturation": "unité",
+    "quantite": 3,
+    "unite": "pièce",
+    "categorie": "produits laitiers",
+    "unite_facturation": "unite",
     "prix_par_magasin": [
       {
         "magasin": "Carrefour",

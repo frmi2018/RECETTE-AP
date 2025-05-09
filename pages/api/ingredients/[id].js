@@ -1,22 +1,17 @@
-import fs from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
 
-const filePath = path.join(process.cwd(), "data", "ingredients.json");
+dotenv.config({ path: ".env.local" });
 
-export default function handler(req, res) {
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export default async function handler(req, res) {
   const {
     query: { id },
     method,
   } = req;
-
-  const readIngredients = () => {
-    const fileContent = fs.readFileSync(filePath, "utf8");
-    return JSON.parse(fileContent);
-  };
-
-  const writeIngredients = ingredients => {
-    fs.writeFileSync(filePath, JSON.stringify(ingredients, null, 2), "utf8");
-  };
 
   const numericId = parseInt(id);
 
@@ -26,46 +21,82 @@ export default function handler(req, res) {
 
   if (method === "GET") {
     try {
-      const ingredients = readIngredients();
-      const ingredient = ingredients.find(ing => ing.id === numericId);
-      if (!ingredient) {
+      const { data, error } = await supabase
+        .from("ingredients")
+        .select("*")
+        .eq("id", numericId)
+        .single();
+
+      if (error) {
+        console.error("Erreur lors de la récupération de l'ingrédient", error);
         return res.status(404).json({ message: "Ingrédient non trouvé" });
       }
-      res.status(200).json(ingredient);
+
+      res.status(200).json(data);
     } catch (error) {
-      res.status(500).json({ message: "Erreur serveur lors de la lecture" });
+      console.error(
+        "Erreur serveur lors de la récupération de l'ingrédient",
+        error,
+      );
+      res
+        .status(500)
+        .json({
+          message: "Erreur serveur lors de la récupération de l'ingrédient",
+        });
     }
   } else if (method === "PUT") {
     try {
       const updatedFields = req.body;
-      const ingredients = readIngredients();
-      const index = ingredients.findIndex(ing => ing.id === numericId);
-      if (index === -1) {
-        return res.status(404).json({ message: "Ingrédient non trouvé" });
-      }
 
-      ingredients[index] = { ...ingredients[index], ...updatedFields };
-      writeIngredients(ingredients);
+      const { error } = await supabase
+        .from("ingredients")
+        .update(updatedFields)
+        .eq("id", numericId);
+
+      if (error) {
+        console.error("Erreur lors de la mise à jour de l'ingrédient", error);
+        return res
+          .status(500)
+          .json({ message: "Erreur lors de la mise à jour de l'ingrédient" });
+      }
 
       res.status(200).json({ message: "Ingrédient mis à jour avec succès" });
     } catch (error) {
+      console.error(
+        "Erreur serveur lors de la mise à jour de l'ingrédient",
+        error,
+      );
       res
         .status(500)
-        .json({ message: "Erreur serveur lors de la mise à jour" });
+        .json({
+          message: "Erreur serveur lors de la mise à jour de l'ingrédient",
+        });
     }
   } else if (method === "DELETE") {
     try {
-      let ingredients = readIngredients();
-      const filtered = ingredients.filter(ing => ing.id !== numericId);
-      if (filtered.length === ingredients.length) {
-        return res.status(404).json({ message: "Ingrédient non trouvé" });
+      const { error } = await supabase
+        .from("ingredients")
+        .delete()
+        .eq("id", numericId);
+
+      if (error) {
+        console.error("Erreur lors de la suppression de l'ingrédient", error);
+        return res
+          .status(500)
+          .json({ message: "Erreur lors de la suppression de l'ingrédient" });
       }
-      writeIngredients(filtered);
+
       res.status(200).json({ message: "Ingrédient supprimé avec succès" });
     } catch (error) {
+      console.error(
+        "Erreur serveur lors de la suppression de l'ingrédient",
+        error,
+      );
       res
         .status(500)
-        .json({ message: "Erreur serveur lors de la suppression" });
+        .json({
+          message: "Erreur serveur lors de la suppression de l'ingrédient",
+        });
     }
   } else {
     res.setHeader("Allow", ["GET", "PUT", "DELETE"]);

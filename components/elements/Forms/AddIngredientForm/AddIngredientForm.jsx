@@ -8,9 +8,9 @@ import AddStoreModal from "./AddStoreModal";
 export default function AddIngredientForm({ onClose, onAdded }) {
   const [form, setForm] = useState({
     nom: "",
-    quantité: 1,
-    unité: "pièce",
-    catégorie: "non définie",
+    quantite: 1,
+    unite: "pièce",
+    categorie: "non définie",
     unite_facturation: "Pièce",
     prix_par_magasin: [],
     image: "/images/icons/add-image.png",
@@ -23,7 +23,7 @@ export default function AddIngredientForm({ onClose, onAdded }) {
     const { name, value } = e.target;
     setForm((prev) => ({
       ...prev,
-      [name]: name === "quantité" ? parseFloat(value) : value,
+      [name]: name === "quantite" ? parseFloat(value) : value,
     }));
   };
 
@@ -71,7 +71,7 @@ export default function AddIngredientForm({ onClose, onAdded }) {
             <input
               name="quantité"
               type="number"
-              value={form.quantité}
+              value={form.quantite}
               onChange={handleChange}
               required
             />
@@ -79,12 +79,12 @@ export default function AddIngredientForm({ onClose, onAdded }) {
 
           <label>
             Unité
-            <input name="unité" value={form.unité} onChange={handleChange} required />
+            <input name="unité" value={form.unite} onChange={handleChange} required />
           </label>
 
           <label>
             Catégorie
-            <input name="catégorie" value={form.catégorie} onChange={handleChange} required />
+            <input name="catégorie" value={form.categorie} onChange={handleChange} required />
           </label>
 
           <fieldset style={{ display: "flex", justifyContent:"space-around"}}>

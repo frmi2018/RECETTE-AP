@@ -2,17 +2,22 @@
   "name": "recette-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-recipes": "node importRecipes.js",
+    "import-ingredients": "node importIngredients.js",
+    "import-data": "npm run import-recipes && npm run import-ingredients"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "mongoose": "^8.13.2",
+    "@supabase/supabase-js": "^2.49.4",
+    "dotenv": "^16.5.0",
     "next": "15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "uuid": "^11.1.0"
   }
 }

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { fetchRecipes } from "@/lib/api-recipes";
+import { fetchRandomRecipes } from "@/lib/api-recipes";
 import Link from "next/link";
 import RecipeCard from "../RecipeCard";
 import styles from "./DisplayRecipeIdeas.module.css";
 
 /**
  * Composant : DisplayRecipeIdeas
- * Rôle : Affiche 3 recettes contenues dans le fichier recipe.json
+ * Rôle : Affiche 3 recettes
  */
 
 const DisplayRecipeIdeas = () => {
@@ -16,8 +16,8 @@ const DisplayRecipeIdeas = () => {
   useEffect(() => {
     const loadRecipes = async () => {
       try {
-        const allRecipes = await fetchRecipes();
-        setRecipes(allRecipes);
+        const data = await fetchRandomRecipes();
+        setRecipes(data);
       } catch (err) {
         console.error("Erreur lors du chargement des recettes :", err);
         setError(err.message);
@@ -25,11 +25,6 @@ const DisplayRecipeIdeas = () => {
     };
     loadRecipes();
   }, []);
-
-  const randomRecipes = () => {
-    const shuffled = [...recipes].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
-  };
 
   if (error) {
     return <div>Erreur : {error}</div>;
@@ -39,16 +34,10 @@ const DisplayRecipeIdeas = () => {
     return <div>Chargement des recettes...</div>;
   }
 
-  if (recipes.length < 3) {
-    return <div>Pas assez de recettes disponibles.</div>;
-  }
-
-  const selectedRecipes = randomRecipes();
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.recipeContainer}>
-        {selectedRecipes.map(recipe => (
+        {recipes.map(recipe => (
           <Link
             href={`/recipes/${recipe.id}`}
             key={recipe.id}

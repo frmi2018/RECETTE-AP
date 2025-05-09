@@ -20,7 +20,7 @@ export default function IngredientList() {
       const data = await fetchIngredients();
       setIngredients(data);
     } catch (error) {
-      console.error(error);
+      console.error("Erreur lors du chargement des ingrédients :", error);
     }
   };
 
@@ -29,9 +29,10 @@ export default function IngredientList() {
   }, []);
 
   const filteredItems = useMemo(() => {
+    const lowerSearch = search.toLowerCase();
     return ingredients
-      .filter(i => i.nom.toLowerCase().includes(search.toLowerCase()))
-      .filter(i => categoryFilter === "all" || i.catégorie === categoryFilter)
+      .filter(i => i.nom.toLowerCase().includes(lowerSearch))
+      .filter(i => categoryFilter === "all" || i.categorie === categoryFilter)
       .sort((a, b) =>
         a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }),
       );
@@ -43,7 +44,12 @@ export default function IngredientList() {
   }, [filteredItems, page]);
 
   const uniqueCategories = useMemo(() => {
-    return ["all", ...new Set(ingredients.map(i => i.catégorie))];
+    const categories = ingredients
+      .map(i =>
+        typeof i.categorie === "string" ? i.categorie.toLowerCase() : null,
+      )
+      .filter(Boolean);
+    return ["all", ...new Set(categories)];
   }, [ingredients]);
 
   const handleDelete = async id => {

@@ -23,7 +23,6 @@ import styles from "./IngredientList.module.css";
 
 
 export default function IngredientGrid({ items, onEdit, onDelete }) {
-  console.log("items=>",items)
   return (
     <div className={styles.grid}>
       {items.map(ingredient => (

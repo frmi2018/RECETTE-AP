@@ -27,7 +27,7 @@ export default function RecipeIngredients({ ingredients, recipeId, onUpdate }) {
     if (window.confirm(`Supprimer ${ingredient.nom} ?`)) {
       const newIngredients = ingredients.filter(i => i.id !== ingredient.id);
       try {
-        await updateRecipe(recipeId, { ingrédients: newIngredients });
+        await updateRecipe(recipeId, { ingredients: newIngredients });
         onUpdate && onUpdate(); // Recharge la recette si nécessaire
       } catch (err) {
         console.error("Erreur suppression ingrédient :", err);
@@ -83,7 +83,7 @@ export default function RecipeIngredients({ ingredients, recipeId, onUpdate }) {
   
     try {
       // Met à jour la recette avec les nouveaux ingrédients
-      await updateRecipe(recipeId, { ingrédients: updatedIngredients });
+      await updateRecipe(recipeId, { ingredients: updatedIngredients });
       onUpdate && onUpdate(); // Recharge la recette si nécessaire
     } catch (err) {
       console.error("Erreur ajout ingrédient :", err);

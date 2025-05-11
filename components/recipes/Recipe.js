@@ -88,6 +88,7 @@ export default function Recipe() {
         <RecipeIngredients
           ingredients={ingredientRecipe}
           recipeId={id}
+          recipe={recipe}
           onUpdate={loadData}
         />
       ) : (

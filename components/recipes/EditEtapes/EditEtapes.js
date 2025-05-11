@@ -1,63 +1,3 @@
-/**
- * Composant : EditEtapes
- * Rôle : Edite les étapes d'une recette contenu dans le fichier recipe.json
- * Utilisé dans : Recipe
- */
-//
-// extrait objet recipe.json
-// {
-//   "id": 10,
-//   "etapes": [
-//     "Préchauffer le four à 180°C.",
-//     "Faire fondre le chocolat et le beurre.",
-//     "Mélanger avec le sucre, les œufs et la farine.",
-//     "Verser dans un moule et cuire pendant 25 minutes."
-//   ],
-// }
-//
-// Appel la méthode updateRecipe du fichier @/lib/api-recipes
-// export const updateRecipe = async (id, updatedFields) => {
-//   const response = await fetch((`/api/recipes/${id}`, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ id, ...updatedFields }),
-//   });
-//   if (!response.ok) {
-//     throw new Error(
-//       `Erreur lors de la mise à jour de la recette avec id ${id}`,
-//     );
-//   }
-// };
-//
-// updateRecipe utilise le méthode PUT du fichier pages/api/recipes/[id]
-// pour mettre à jour le fichier /data/recipes.json
-//
-// if (method === "PUT") {
-//   try {
-//     const fileContent = fs.readFileSync(filePath, "utf8");
-//     const recipes = JSON.parse(fileContent);
-
-//     const index = recipes.findIndex(r => r.id === parseInt(id));
-//     if (index === -1) {
-//       return res
-//         .status(404)
-//         .json({ message: `Recette avec id ${id} introuvable` });
-//     }
-
-//     const updatedFields = req.body;
-//     recipes[index] = { ...recipes[index], ...updatedFields };
-
-//     fs.writeFileSync(filePath, JSON.stringify(recipes, null, 2), "utf8");
-//     res.status(200).json({ message: "Recette mise à jour avec succès" });
-//   } catch (error) {
-//     res
-//       .status(500)
-//       .json({ message: "Erreur lors de la mise à jour de la recette" });
-//   }
-// }
-
 import { useState } from "react";
 import styles from "./EditEtapes.module.css";
 import ingredientsData from "@/data/ingredients.json";
@@ -163,20 +103,20 @@ export default function EditEtapes({ initialEtapes, recipeId, onUpdate }) {
   };
 
   return (
-    <div className={styles.editEtapesContainer}>
-      <h3>Étapes de la recette</h3>
-
-      {isEditing ? (
-        <>
-          {etapes.map((etape, index) => (
-            <div
-              key={index}
-              draggable
-              onDragStart={() => onDragStart(index)}
-              onDragOver={e => onDragOver(e, index)}
-              onDragLeave={onDragLeave}
-              onDrop={() => onDrop(index)}
-              className={`${styles.etapeItem} 
+    <div>
+      <h3>{etapes.length} Étapes</h3>
+      <div className={styles.editEtapesContainer}>
+        {isEditing ? (
+          <>
+            {etapes.map((etape, index) => (
+              <div
+                key={index}
+                draggable
+                onDragStart={() => onDragStart(index)}
+                onDragOver={e => onDragOver(e, index)}
+                onDragLeave={onDragLeave}
+                onDrop={() => onDrop(index)}
+                className={`${styles.etapeItem} 
                 ${index === draggedIndex ? styles.dragged : ""} 
                 ${
                   index === dragOverIndex
@@ -185,61 +125,62 @@ export default function EditEtapes({ initialEtapes, recipeId, onUpdate }) {
                       : styles.dragOverBottom
                     : ""
                 }`}
-            >
-              <div>{index + 1}</div>
-              <input
-                type="text"
-                value={etape}
-                onChange={e => modifierEtape(index, e.target.value)}
-                className={styles.etapeInput}
-              />
+              >
+                <div>{index + 1}</div>
+                <input
+                  type="text"
+                  value={etape}
+                  onChange={e => modifierEtape(index, e.target.value)}
+                  className={styles.etapeInput}
+                />
+                <button
+                  type="button"
+                  onClick={() => supprimerEtape(index)}
+                  className={styles.etapeSupprimer}
+                >
+                  Supprimer
+                </button>
+              </div>
+            ))}
+            <div className={styles.etapesActions}>
               <button
                 type="button"
-                onClick={() => supprimerEtape(index)}
-                className={styles.etapeSupprimer}
+                onClick={ajouterEtape}
+                className={styles.ajouterBtn}
               >
-                Supprimer
+                Ajouter une étape
+              </button>
+              <button
+                type="button"
+                onClick={handleRecipeUpdate}
+                className={styles.sauvegarderBtn}
+              >
+                Sauvegarder
               </button>
             </div>
-          ))}
-          <div className={styles.etapesActions}>
+          </>
+        ) : (
+          <>
+            {etapes.map((etape, index) => (
+              <div key={index} className={styles.etapeItem2}>
+                {index + 1} -{" "}
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: mettreEnGrasIngrédients(etape),
+                  }}
+                />
+              </div>
+            ))}
             <button
               type="button"
-              onClick={ajouterEtape}
-              className={styles.ajouterBtn}
+              onClick={toggleEditing}
+              className={styles.editerBtn}
             >
-              Ajouter une étape
+              Éditer les étapes
             </button>
-            <button
-              type="button"
-              onClick={handleRecipeUpdate}
-              className={styles.sauvegarderBtn}
-            >
-              Sauvegarder
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          {etapes.map((etape, index) => (
-            <div key={index} className={styles.etapeItem2}>
-              {index + 1} -{" "}
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: mettreEnGrasIngrédients(etape),
-                }}
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={toggleEditing}
-            className={styles.editerBtn}
-          >
-            Éditer les étapes
-          </button>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

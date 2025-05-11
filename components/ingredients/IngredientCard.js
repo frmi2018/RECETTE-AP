@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./IngredientCard.module.css";
+import { deleteCartItem, saveCartItem } from "@/lib/api-cart";
 
-export default function IngredientCard({ ingredient, onEdit, onDelete }) {
-  // Fonction pour ajouter un "s" à "pièce" si la quantité est supérieure à 1
-  const getUnitWithPlural = (quantité, unite_facturation) => {
-    if (unite_facturation === "unité" && quantité > 1) {
-      return `${unité}s`; // Ajoute un "s" à "pièce" si quantité > 1
+export default function IngredientCard({
+  ingredient,
+  cartItems,
+  onEdit,
+  onDelete,
+}) {
+  const getUnitWithPlural = (quantité, unite) => {
+    if (unite === "unité" && quantité > 1) {
+      return `${unite}s`;
     }
-    return unite_facturation;
+    return unite;
+  };
+
+  const [inCart, setInCart] = useState(false);
+
+  useEffect(() => {
+    const isInCart = cartItems.some(item => item.id === ingredient.id);
+    setInCart(isInCart);
+  }, [cartItems, ingredient.id]);
+
+  const toggleCartStatus = async () => {
+    try {
+      if (inCart) {
+        await deleteCartItem(ingredient.id);
+      } else {
+        await saveCartItem({ id: ingredient.id, quantité_a_acheter: 1 });
+      }
+      setInCart(!inCart);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour du panier", error);
+    }
   };
 
   return (
@@ -18,7 +43,7 @@ export default function IngredientCard({ ingredient, onEdit, onDelete }) {
             src={ingredient.image}
             alt={ingredient.nom}
             className={
-              ingredient.image == "/images/icons/pas-image.png"
+              ingredient.image === "/images/icons/pas-image.png"
                 ? styles.addImage
                 : styles.cardImage
             }
@@ -29,18 +54,26 @@ export default function IngredientCard({ ingredient, onEdit, onDelete }) {
           {ingredient.quantité || ingredient.unité ? (
             <div>
               {ingredient.quantité}{" "}
-              {ingredient.unite_facturation === "unité" &&
-              ingredient.quantité > 1
-                ? `${ingredient.unité}s`
-                : ingredient.unité}
+              {getUnitWithPlural(ingredient.quantité, ingredient.unité)}
             </div>
           ) : (
             <div>&nbsp;</div>
           )}
           <div>
-            {/* Ouvre la modal d'édition de l'ingrédient */}
             <button onClick={() => onEdit(ingredient)}>✏️</button>
             <button onClick={() => onDelete(ingredient.id)}>🗑</button>
+            <button onClick={toggleCartStatus} className={styles.cartButton}>
+              <img
+                src={
+                  inCart
+                    ? "/images/icons/remove-cart.png"
+                    : "/images/icons/add-cart.png"
+                }
+                alt={inCart ? "Retirer du panier" : "Ajouter au panier"}
+                width={24}
+                height={24}
+              />
+            </button>
           </div>
         </div>
       </div>

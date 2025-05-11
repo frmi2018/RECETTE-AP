@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": 42,
+    "quantité_a_acheter": 1,
+    "user_id": "dfd4c05f-7d21-4c1e-b94b-d193b02ca007"
+  },
+  {
+    "id": 39,
+    "quantité_a_acheter": 1,
+    "user_id": "dfd4c05f-7d21-4c1e-b94b-d193b02ca007"
+  },
+  {
+    "id": 38,
+    "quantité_a_acheter": 1,
+    "user_id": "dfd4c05f-7d21-4c1e-b94b-d193b02ca007"
+  }
+]

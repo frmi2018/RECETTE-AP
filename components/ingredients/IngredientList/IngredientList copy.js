@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import styles from "./IngredientList.module.css";
 import { fetchIngredients, deleteIngredient } from "@/lib/api-ingredients";
-import { fetchCart } from "@/lib/api-cart";
 import IngredientFilters from "./IngredientFilters";
 import IngredientGrid from "./IngredientGrid";
 import IngredientModals from "./IngredientModals";
@@ -15,7 +14,6 @@ export default function IngredientList() {
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedIngredient, setSelectedIngredient] = useState(null);
-  const [cartItems, setCartItems] = useState([]);
 
   const loadIngredients = async () => {
     try {
@@ -26,17 +24,23 @@ export default function IngredientList() {
     }
   };
 
-  const loadCartItems = async () => {
-    try {
-      const cartData = await fetchCart();
-      setCartItems(cartData);
-    } catch (error) {
-      console.error("Erreur lors du chargement du panier :", error);
-    }
-  };
-
   useEffect(() => {
     loadIngredients();
+  }, []);
+
+  const [cartItems, setCartItems] = useState([]);
+
+  // Charger les items du panier au montage
+  useEffect(() => {
+    const loadCartItems = async () => {
+      try {
+        const cartData = await fetchCart();
+        setCartItems(cartData);
+      } catch (error) {
+        console.error("Erreur lors du chargement du panier :", error);
+      }
+    };
+
     loadCartItems();
   }, []);
 
@@ -88,6 +92,7 @@ export default function IngredientList() {
         <button onClick={() => setShowModal(true)}>
           Ajouter un ingrédient
         </button>
+
         <IngredientFilters
           search={search}
           setSearch={setSearch}
@@ -99,7 +104,6 @@ export default function IngredientList() {
       <div className={styles.wrapper}>
         <IngredientGrid
           items={paginatedItems}
-          cartItems={cartItems} // <-- Passer le panier ici
           onEdit={ingredient => {
             setSelectedIngredient(ingredient);
             setShowEditModal(true);

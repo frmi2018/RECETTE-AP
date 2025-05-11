@@ -1,20 +1,15 @@
-import { createClient } from "@supabase/supabase-js";
-import dotenv from "dotenv";
+import fs from "fs";
+import path from "path";
 
-dotenv.config({ path: ".env.local" });
+const filePath = path.join(process.cwd(), "data", "ingredients.json");
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-export default async function handler(req, res) {
+export default function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
     return res.status(405).end(`Méthode ${req.method} non autorisée`);
   }
 
   const { ids } = req.body;
-  // console.log("IDs reçus dans l'API :", ids);
 
   if (
     !Array.isArray(ids) ||
@@ -25,32 +20,29 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { data, error } = await supabase
-      .from("ingredients")
-      .select("id, nom, quantite, unite, image, marque")
-      .in("id", ids);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const ingredients = JSON.parse(fileContent);
 
-    // console.log("Données des ingrédients récupérées :", data);
-    // console.log("Erreur Supabase :", error);
+    const filteredIngredients = ingredients.filter(ingredient =>
+      ids.includes(ingredient.id),
+    );
 
-    if (error) {
-      console.error("Erreur lors de la récupération des ingrédients :", error);
-      return res
-        .status(500)
-        .json({ message: "Erreur lors de la récupération des ingrédients" });
-    }
-
-    if (!data || data.length === 0) {
+    if (filteredIngredients.length === 0) {
       return res
         .status(404)
         .json({ message: "Aucun ingrédient trouvé pour les IDs fournis" });
     }
 
-    res.status(200).json(data);
+    res.status(200).json(filteredIngredients);
   } catch (error) {
-    console.error("Erreur serveur :", error);
-    res.status(500).json({
-      message: "Erreur serveur lors de la récupération des ingrédients",
-    });
+    console.error(
+      "Erreur serveur lors de la récupération des ingrédients",
+      error,
+    );
+    res
+      .status(500)
+      .json({
+        message: "Erreur serveur lors de la récupération des ingrédients",
+      });
   }
 }

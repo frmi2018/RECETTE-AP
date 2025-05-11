@@ -40,7 +40,7 @@ const DisplayRecipeIdeas = () => {
         {recipes.map(recipe => (
           <Link
             href={`/recipes/${recipe.id}`}
-            key={recipe.id}
+            key={recipe.id} // La key est bien ici
             passHref
             className={styles.recipeCardLink}
           >

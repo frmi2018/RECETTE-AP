@@ -1,47 +1,47 @@
 [
   {
-    "id": 1,
+    "id": "291e08f1-c069-4a4a-9d16-78afb3741e1a",
     "nom": "Spaghetti Bolognaise",
     "ingredients": [
       {
         "id": 1,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 2,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 3,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 4,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 5,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 6,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 7,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 8,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       }
     ],
     "description": "",
@@ -53,59 +53,342 @@
       "Laisser mijoter pendant 15 minutes.",
       "Servir la sauce sur les spaghetti."
     ],
-    "temps_préparation": 15,
+    "temps_preparation": 15,
     "temps_cuisson": 30,
     "portions": 4,
     "type": "plat principal",
     "calories": 1625,
-    "régime": [
+    "regime": [
       "sans gluten"
     ],
-    "image": "/images/recipes/spaguetti-bolognaise.jpg"
+    "image": "/images/recipes/spaguetti-bolognaise.jpg",
+    "ingrédients": [
+      {
+        "id": 1,
+        "nom": "spaghetti",
+        "quantite": 500,
+        "unite": "g",
+        "categorie": "pâtes",
+        "unite_facturation": "kilo",
+        "image": "/images/ingredients/spaguetti-fiorini.jpg",
+        "marque": "intermarché"
+      },
+      {
+        "id": 2,
+        "nom": "viande hachée",
+        "quantite": 300,
+        "unite": "g",
+        "categorie": "viandes",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque",
+        "quantité": 500,
+        "unité": "g"
+      },
+      {
+        "id": 3,
+        "nom": "oignon",
+        "quantite": 150,
+        "unite": "g",
+        "categorie": "légumes",
+        "unite_facturation": "kilo",
+        "image": "/images/ingredients/oignon.jpg",
+        "marque": "sans marque"
+      },
+      {
+        "id": 4,
+        "nom": "ail",
+        "quantite": 5,
+        "unite": "pièce",
+        "categorie": "légumes",
+        "unite_facturation": "unité",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 5,
+        "nom": "sauce tomate",
+        "quantite": 2,
+        "unite": "bouteille",
+        "categorie": "sauces",
+        "unite_facturation": "unité",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 6,
+        "nom": "huile d'olive",
+        "quantite": 1,
+        "unite": "litre",
+        "categorie": "huiles",
+        "unite_facturation": "litre",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 7,
+        "nom": "sel",
+        "quantite": 500,
+        "unite": "g",
+        "categorie": "épices",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 8,
+        "nom": "poivre",
+        "quantite": 100,
+        "unite": "g",
+        "categorie": "épices",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      }
+    ]
   },
   {
-    "id": 2,
+    "id": "0023b84e-b305-4191-991c-5b3ac871bdb9",
+    "nom": "Quiche Lorraine",
+    "ingredients": [
+      {
+        "id": 18,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 19,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 20,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 21,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 22,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 23,
+        "unité": "",
+        "quantité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 180°C.",
+      "Étaler la pâte brisée dans un moule.",
+      "Mélanger les œufs, la crème fraîche, le sel et le poivre.",
+      "Ajouter les lardons et verser le mélange sur la pâte.",
+      "Cuire au four pendant 30 minutes."
+    ],
+    "temps_preparation": 15,
+    "temps_cuisson": 30,
+    "portions": 6,
+    "type": "plat principal",
+    "calories": 450,
+    "regime": [
+      "non végétarien"
+    ],
+    "image": "/images/recipes/quiche-lorraine.jpg"
+  },
+  {
+    "id": "f9c82e77-2ba6-448b-a476-83ae221db0b5",
+    "nom": "Pizza Margherita",
+    "ingredients": [
+      {
+        "id": 27,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 5,
+        "unité": "ml",
+        "quantité": "0"
+      },
+      {
+        "id": 28,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 29,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 7,
+        "unité": "g",
+        "quantité": 2
+      },
+      {
+        "id": 42,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 39,
+        "unité": "",
+        "quantité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 220°C.",
+      "Étaler la pâte à pizza.",
+      "Étaler la sauce tomate, ajouter la mozzarella et les feuilles de basilic.",
+      "Cuire au four pendant 15 minutes."
+    ],
+    "temps_preparation": 10,
+    "temps_cuisson": 15,
+    "portions": 4,
+    "type": "plat principal",
+    "calories": 800,
+    "regime": [
+      "végétarien"
+    ],
+    "image": "/images/recipes/pizza-margherita.jpg"
+  },
+  {
+    "id": "1942ee19-4686-4753-aadb-2e6589510943",
+    "nom": "Poulet Rôti",
+    "ingredients": [
+      {
+        "id": 9,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 7,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 8,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 32,
+        "unité": "",
+        "quantité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Préchauffer le four à 200°C.",
+      "Assaisonner le poulet avec du sel, du poivre et des herbes de Provence.",
+      "Cuire au four pendant 1h30.",
+      "Servir avec des légumes ou des pommes de terre."
+    ],
+    "temps_preparation": 10,
+    "temps_cuisson": 90,
+    "portions": 6,
+    "type": "plat principal",
+    "calories": 1200,
+    "regime": [
+      "non végétarien",
+      "sans gluten"
+    ],
+    "image": "/images/icons/pas-image.png"
+  },
+  {
+    "id": "7cdea5b3-e852-4c8e-b37a-a637a63ce347",
+    "nom": "Salade César",
+    "ingredients": [
+      {
+        "id": 33,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 34,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 35,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 36,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 37,
+        "unité": "",
+        "quantité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Laver et couper la laitue.",
+      "Ajouter les croûtons, le poulet grillé et le parmesan.",
+      "Mélanger avec la sauce César et servir frais."
+    ],
+    "temps_preparation": 15,
+    "temps_cuisson": 0,
+    "portions": 4,
+    "type": "entrée",
+    "calories": 600,
+    "regime": [
+      "non végétarien"
+    ],
+    "image": "/images/icons/pas-image.png"
+  },
+  {
+    "id": "c912ca43-cbd4-48cc-87da-d6ead4e538cf",
     "nom": "Curry de Poulet",
     "ingredients": [
       {
         "id": 9,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 3,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 4,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 10,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 11,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 12,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 7,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 8,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       }
     ],
     "description": "",
@@ -117,55 +400,108 @@
       "Laisser mijoter pendant 20 minutes.",
       "Servir avec du riz."
     ],
-    "temps_préparation": 20,
+    "temps_preparation": 20,
     "temps_cuisson": 25,
     "portions": 4,
     "type": "plat principal",
     "calories": 1850,
-    "régime": [
+    "regime": [
       "sans gluten",
       "sans lactose"
     ],
     "image": "/images/icons/pas-image.png"
   },
   {
-    "id": 3,
+    "id": "dac86487-267d-4890-8517-171b5fdc5a39",
+    "nom": "Soupe de Légumes",
+    "ingredients": [
+      {
+        "id": 3,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 14,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 24,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 25,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 26,
+        "unité": "",
+        "quantité": ""
+      },
+      {
+        "id": 7,
+        "unité": "",
+        "quantité": ""
+      }
+    ],
+    "description": "",
+    "etapes": [
+      "Éplucher et couper les légumes en morceaux.",
+      "Faire revenir l'oignon dans une casserole avec un peu d'huile.",
+      "Ajouter les légumes, couvrir d'eau et laisser mijoter pendant 30 minutes.",
+      "Mixer et servir chaud."
+    ],
+    "temps_preparation": 20,
+    "temps_cuisson": 30,
+    "portions": 4,
+    "type": "entrée",
+    "calories": 200,
+    "regime": [
+      "végétarien",
+      "végan"
+    ],
+    "image": "/images/recipes/soupe-de-legumes.jpg"
+  },
+  {
+    "id": "6acdb974-0b95-4f47-9c5e-8314cfedba3d",
     "nom": "Sauté de Légumes",
     "ingredients": [
       {
         "id": 13,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 14,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 15,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 16,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 4,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 10,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 17,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       }
     ],
     "description": "",
@@ -176,12 +512,12 @@
       "Ajouter la sauce soja et cuire encore 2 minutes.",
       "Servir chaud."
     ],
-    "temps_préparation": 10,
+    "temps_preparation": 10,
     "temps_cuisson": 10,
     "portions": 2,
     "type": "accompagnement",
     "calories": 350,
-    "régime": [
+    "regime": [
       "végétarien",
       "végan",
       "sans gluten"
@@ -189,206 +525,43 @@
     "image": "/images/recipes/saute-de-legumes.jpg"
   },
   {
-    "id": 4,
-    "nom": "Quiche Lorraine",
-    "ingredients": [
-      {
-        "id": 18,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 19,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 20,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 21,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 22,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 23,
-        "quantité": "",
-        "unité": ""
-      }
-    ],
-    "description": "",
-    "etapes": [
-      "Préchauffer le four à 180°C.",
-      "Étaler la pâte brisée dans un moule.",
-      "Mélanger les œufs, la crème fraîche, le sel et le poivre.",
-      "Ajouter les lardons et verser le mélange sur la pâte.",
-      "Cuire au four pendant 30 minutes."
-    ],
-    "temps_préparation": 15,
-    "temps_cuisson": 30,
-    "portions": 6,
-    "type": "plat principal",
-    "calories": 450,
-    "régime": [
-      "non végétarien"
-    ],
-    "image": "/images/recipes/quiche-lorraine.jpg"
-  },
-  {
-    "id": 5,
-    "nom": "Soupe de Légumes",
-    "ingredients": [
-      {
-        "id": 3,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 14,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 24,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 25,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 26,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 7,
-        "quantité": "",
-        "unité": ""
-      }
-    ],
-    "description": "",
-    "etapes": [
-      "Éplucher et couper les légumes en morceaux.",
-      "Faire revenir l'oignon dans une casserole avec un peu d'huile.",
-      "Ajouter les légumes, couvrir d'eau et laisser mijoter pendant 30 minutes.",
-      "Mixer et servir chaud."
-    ],
-    "temps_préparation": 20,
-    "temps_cuisson": 30,
-    "portions": 4,
-    "type": "entrée",
-    "calories": 200,
-    "régime": [
-      "végétarien",
-      "végan"
-    ],
-    "image": "/images/recipes/soupe-de-legumes.jpg"
-  },
-  {
-    "id": 6,
-    "nom": "Pizza Margherita",
-    "ingredients": [
-      {
-        "id": 27,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 5,
-        "quantité": "0",
-        "unité": "ml"
-      },
-      {
-        "id": 28,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 29,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 7,
-        "quantité": 2,
-        "unité": "g"
-      },
-      {
-        "id": 42,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 39,
-        "quantité": "",
-        "unité": ""
-      }
-    ],
-    "description": "",
-    "etapes": [
-      "Préchauffer le four à 220°C.",
-      "Étaler la pâte à pizza.",
-      "Étaler la sauce tomate, ajouter la mozzarella et les feuilles de basilic.",
-      "Cuire au four pendant 15 minutes."
-    ],
-    "temps_préparation": 10,
-    "temps_cuisson": 15,
-    "portions": 4,
-    "type": "plat principal",
-    "calories": 800,
-    "régime": [
-      "végétarien"
-    ],
-    "image": "/images/recipes/pizza-margherita.jpg"
-  },
-  {
-    "id": 7,
+    "id": "97cacf41-6dcc-4c99-830b-f930d7b0e604",
     "nom": "Ratatouille",
     "ingredients": [
       {
         "id": 13,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 14,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 15,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 30,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 31,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 6,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       },
       {
         "id": 7,
-        "quantité": "",
-        "unité": ""
+        "unité": "",
+        "quantité": ""
       }
     ],
     "description": "",
@@ -398,12 +571,12 @@
       "Ajouter les légumes et laisser mijoter pendant 30 minutes.",
       "Servir chaud ou froid."
     ],
-    "temps_préparation": 15,
+    "temps_preparation": 15,
     "temps_cuisson": 30,
     "portions": 4,
     "type": "accompagnement",
     "calories": 250,
-    "régime": [
+    "regime": [
       "végétarien",
       "végan",
       "sans gluten"
@@ -411,122 +584,58 @@
     "image": "/images/recipes/ratatouille.jpg"
   },
   {
-    "id": 8,
-    "nom": "Poulet Rôti",
-    "ingredients": [
-      {
-        "id": 9,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 7,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 8,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 32,
-        "quantité": "",
-        "unité": ""
-      }
-    ],
-    "description": "",
-    "etapes": [
-      "Préchauffer le four à 200°C.",
-      "Assaisonner le poulet avec du sel, du poivre et des herbes de Provence.",
-      "Cuire au four pendant 1h30.",
-      "Servir avec des légumes ou des pommes de terre."
-    ],
-    "temps_préparation": 10,
-    "temps_cuisson": 90,
-    "portions": 6,
-    "type": "plat principal",
-    "calories": 1200,
-    "régime": [
-      "non végétarien",
-      "sans gluten"
-    ],
-    "image": "/images/icons/pas-image.png"
-  },
-  {
-    "id": 9,
-    "nom": "Salade César",
-    "ingredients": [
-      {
-        "id": 33,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 34,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 35,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 36,
-        "quantité": "",
-        "unité": ""
-      },
-      {
-        "id": 37,
-        "quantité": "",
-        "unité": ""
-      }
-    ],
-    "description": "",
-    "etapes": [
-      "Laver et couper la laitue.",
-      "Ajouter les croûtons, le poulet grillé et le parmesan.",
-      "Mélanger avec la sauce César et servir frais."
-    ],
-    "temps_préparation": 15,
-    "temps_cuisson": 0,
-    "portions": 4,
-    "type": "entrée",
-    "calories": 600,
-    "régime": [
-      "non végétarien"
-    ],
-    "image": "/images/icons/pas-image.png"
-  },
-  {
-    "id": 10,
+    "id": "7e90a4de-e47d-4d7c-b8b3-a74b0885f07a",
     "nom": "Brownies au Chocolat",
     "ingredients": [
       {
         "id": 38,
-        "quantité": 50,
-        "unité": "morceaux"
+        "nom": "chocolat noir",
+        "quantite": 200,
+        "unite": "g",
+        "categorie": "autres",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
       },
       {
         "id": 39,
-        "quantité": 30,
-        "unité": "g"
+        "nom": "beurre",
+        "quantite": 100,
+        "unite": "g",
+        "categorie": "produits laitiers",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
       },
       {
         "id": 40,
-        "quantité": 20,
-        "unité": "g"
+        "nom": "sucre",
+        "quantite": 150,
+        "unite": "g",
+        "categorie": "autres",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
       },
       {
         "id": 41,
-        "quantité": 100,
-        "unité": "g"
+        "nom": "farine",
+        "quantite": 100,
+        "unite": "g",
+        "categorie": "autres",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
       },
       {
         "id": 42,
-        "quantité": 2,
-        "unité": "jaunes"
+        "nom": "œufs",
+        "quantite": 3,
+        "unite": "pièce",
+        "categorie": "produits laitiers",
+        "unite_facturation": "unite",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
       }
     ],
     "description": "",
@@ -536,14 +645,78 @@
       "Mélanger avec le sucre, les œufs et la farine.",
       "Verser dans un moule et cuire pendant 25 minutes."
     ],
-    "temps_préparation": 15,
+    "temps_preparation": 15,
     "temps_cuisson": 25,
     "portions": 8,
     "type": "dessert",
     "calories": 400,
-    "régime": [
+    "regime": [
       "végétarien"
     ],
-    "image": "/images/recipes/brownies-au-chocolat.jpg"
+    "image": "/images/recipes/brownies-au-chocolat.jpg",
+    "ingrédients": [
+      {
+        "id": 5,
+        "nom": "sauce tomate",
+        "quantite": 2,
+        "unite": "bouteille",
+        "categorie": "sauces",
+        "unite_facturation": "unité",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 38,
+        "nom": "chocolat noir",
+        "quantite": 200,
+        "unite": "g",
+        "categorie": "autres",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque",
+        "quantité": 20,
+        "unité": ""
+      },
+      {
+        "id": 39,
+        "nom": "beurre",
+        "quantite": 100,
+        "unite": "g",
+        "categorie": "produits laitiers",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 40,
+        "nom": "sucre",
+        "quantite": 150,
+        "unite": "g",
+        "categorie": "autres",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 41,
+        "nom": "farine",
+        "quantite": 100,
+        "unite": "g",
+        "categorie": "autres",
+        "unite_facturation": "kilo",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      },
+      {
+        "id": 42,
+        "nom": "œufs",
+        "quantite": 3,
+        "unite": "pièce",
+        "categorie": "produits laitiers",
+        "unite_facturation": "unite",
+        "image": "/images/icons/pas-image.png",
+        "marque": "sans marque"
+      }
+    ]
   }
 ]
